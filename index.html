@@ -542,22 +542,120 @@
         .tracking-order-title { font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
         .tracking-order-location { font-size: 13px; color: var(--text-secondary); }
 
-        .tracking-map {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            border-radius: var(--radius-lg); height: 300px;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
+        /* Building Visualization */
+        .building-visualization {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        .map-building {
-            font-size: 48px; opacity: 0.3;
+
+        .building-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-align: center;
         }
-        .map-marker {
-            position: absolute; width: 40px; height: 40px;
-            background: var(--indigo-600); border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg); display: flex; align-items: center; justify-content: center;
-            animation: bounce 1s ease infinite;
+
+        .building-cross-section {
+            flex: 1;
+            position: relative;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
         }
-        .map-marker span { transform: rotate(45deg); color: white; font-weight: 700; font-size: 14px; }
+
+        .building-floors {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .building-floor {
+            flex: 1;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 11px;
+            color: var(--text-muted);
+            position: relative;
+            transition: background 0.2s;
+        }
+
+        .building-floor:last-child {
+            border-bottom: none;
+        }
+
+        .building-floor.highlighted {
+            background: var(--indigo-50);
+        }
+
+        .building-floor-label {
+            width: 32px;
+        }
+
+        .building-floor-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin: 0 8px;
+        }
+
+        .building-marker {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            background: var(--indigo-600);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+            transition: top 0.5s ease, left 0.5s ease;
+            z-index: 10;
+            right: 20px;
+        }
+
+        .building-marker::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--indigo-600);
+            border-radius: 50%;
+            animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .building-legend {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .building-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
         @keyframes bounce { 0%, 100% { transform: rotate(-45deg) translateY(0); } 50% { transform: rotate(-45deg) translateY(-10px); } }
 
         /* ==================== PREDICTIVE AI ==================== */
@@ -1716,10 +1814,16 @@
                             </div>
                         </div>
 
-                        <!-- Map -->
-                        <div class="tracking-map">
-                            <div class="map-building">🏢</div>
-                            <div class="map-marker" id="trackingMarker" style="top: 35%; left: 55%;"><span>MH</span></div>
+                        <!-- Building Cross Section -->
+                        <div class="building-visualization">
+                            <div class="building-label">Torre Reforma 115</div>
+                            <div class="building-cross-section">
+                                <div class="building-floors" id="buildingFloors"></div>
+                                <div class="building-marker" id="trackingMarker"><span>MH</span></div>
+                            </div>
+                            <div class="building-legend">
+                                <span><span class="legend-dot" style="background: var(--indigo-600);"></span> Ubicación actual</span>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -2295,12 +2399,27 @@
 
         // Tech tracking data
         const trackingData = [
-            { initials: 'MH', name: 'Miguel Hernández', role: 'Técnico HVAC', eta: '~5 min', order: 'HVAC no enfría correctamente', location: 'Piso 12, Oficina 1205', step: 2, markerPos: { top: '35%', left: '55%' } },
-            { initials: 'AG', name: 'Ana García', role: 'Electricista', eta: 'En sitio', order: 'Tomacorriente no funciona', location: 'Piso 8, Sala de juntas', step: 3, markerPos: { top: '60%', left: '40%' } },
-            { initials: 'RL', name: 'Roberto López', role: 'Plomero', eta: '~12 min', order: 'Puerta de emergencia atascada', location: 'Piso 22, Escalera B', step: 1, markerPos: { top: '25%', left: '65%' } },
-            { initials: 'CR', name: 'Carmen Ruiz', role: 'Técnico General', eta: 'En sitio', order: 'Luz fundida en pasillo', location: 'Piso 15, Pasillo norte', step: 3, markerPos: { top: '45%', left: '50%' } },
-            { initials: 'LS', name: 'Laura Sánchez', role: 'Técnico HVAC', eta: 'Disponible', order: 'Sin tarea asignada', location: 'Piso 27', step: 0, markerPos: { top: '20%', left: '45%' } }
+            { initials: 'MH', name: 'Miguel Hernández', role: 'Técnico HVAC', eta: '~5 min', order: 'HVAC no enfría correctamente', location: 'Piso 12, Oficina 1205', step: 2, floor: 12 },
+            { initials: 'AG', name: 'Ana García', role: 'Electricista', eta: 'En sitio', order: 'Tomacorriente no funciona', location: 'Piso 8, Sala de juntas', step: 3, floor: 8 },
+            { initials: 'RL', name: 'Roberto López', role: 'Plomero', eta: '~12 min', order: 'Puerta de emergencia atascada', location: 'Piso 22, Escalera B', step: 1, floor: 22 },
+            { initials: 'CR', name: 'Carmen Ruiz', role: 'Técnico General', eta: 'En sitio', order: 'Luz fundida en pasillo', location: 'Piso 15, Pasillo norte', step: 3, floor: 15 },
+            { initials: 'LS', name: 'Laura Sánchez', role: 'Técnico HVAC', eta: 'Disponible', order: 'Sin tarea asignada', location: 'Piso 27', step: 0, floor: 27 }
         ];
+
+        // Render building floors
+        function renderBuildingFloors() {
+            const container = document.getElementById('buildingFloors');
+            if (!container) return;
+            
+            let html = '';
+            for (let f = 30; f >= 1; f--) {
+                html += `<div class="building-floor" data-floor="${f}">
+                    <span class="building-floor-label">P${f}</span>
+                    <div class="building-floor-bar"></div>
+                </div>`;
+            }
+            container.innerHTML = html;
+        }
 
         function selectTech(index) {
             const tech = trackingData[index];
@@ -2326,11 +2445,19 @@
                 if (i === tech.step) step.classList.add('current');
             });
 
-            // Update marker
+            // Update building visualization
+            document.querySelectorAll('.building-floor').forEach(el => {
+                el.classList.remove('highlighted');
+                if (parseInt(el.dataset.floor) === tech.floor) {
+                    el.classList.add('highlighted');
+                }
+            });
+
+            // Update marker position (calculate based on floor)
             const marker = document.getElementById('trackingMarker');
-            marker.style.top = tech.markerPos.top;
-            marker.style.left = tech.markerPos.left;
-            marker.querySelector('span').textContent = tech.initials;
+            const topPercent = ((30 - tech.floor) / 30) * 100;
+            marker.style.top = `calc(${topPercent}% + 2px)`;
+            marker.textContent = tech.initials;
         }
         function createOrder() { 
             showToast('Orden creada', 'Ticket #848 asignado a Miguel Hernández', 'success');
@@ -2359,7 +2486,9 @@
         renderOrders();
         renderTeam();
         renderUrgentOrders();
+        renderBuildingFloors();
         setTimeout(() => selectFloor(12), 100);
+        setTimeout(() => selectTech(0), 100);
 
         // Update current time
         function updateTime() {
