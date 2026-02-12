@@ -2015,35 +2015,138 @@
 
                 <!-- QR Assets -->
                 <section class="view" id="assets">
-                    <div class="assets-grid">
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">HVAC Piso 12</div><div class="asset-location">Zona Norte, Unidad 12-A</div><div class="asset-scan-text">Escanear para reportar</div></div>
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">Elevador A</div><div class="asset-location">Lobby Principal</div><div class="asset-scan-text">Escanear para reportar</div></div>
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">Bomba de Agua #2</div><div class="asset-location">Cuarto de Máquinas</div><div class="asset-scan-text">Escanear para reportar</div></div>
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">Generador de Emergencia</div><div class="asset-location">Sótano 2</div><div class="asset-scan-text">Escanear para reportar</div></div>
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">Tablero Eléctrico P15</div><div class="asset-location">Piso 15, Cuarto Técnico</div><div class="asset-scan-text">Escanear para reportar</div></div>
-                        <div class="asset-card"><div class="qr-code"><div class="qr-pattern"></div></div><div class="asset-name">Sistema Contra Incendios</div><div class="asset-location">Todos los pisos</div><div class="asset-scan-text">Escanear para reportar</div></div>
+                    <!-- Hero explanation -->
+                    <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+                        <h2 style="font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">Códigos QR en cada activo</h2>
+                        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.6;">Etiquetas físicas en equipos del edificio. Escanea → Reporta al instante. Sin confusiones sobre qué equipo tiene el problema.</p>
                     </div>
-                    <div class="asset-demo-section">
-                        <h3>Cuando alguien escanea el código:</h3>
-                        <div class="demo-panels">
-                            <div class="demo-panel">
-                                <div class="demo-panel-header">Vista del Inquilino</div>
-                                <div class="demo-panel-body">
-                                    <div class="mock-form-field"><div class="mock-form-label">Activo</div><div class="mock-form-value">HVAC Piso 12 - Unidad 12-A</div></div>
-                                    <div class="mock-form-field"><div class="mock-form-label">Ubicación</div><div class="mock-form-value">Piso 12, Zona Norte</div></div>
-                                    <div class="mock-form-field"><div class="mock-form-label">Describe el problema</div><div class="mock-form-value" style="min-height:60px;color:var(--text-muted)">Toca para escribir...</div></div>
-                                    <button class="btn btn-primary" style="width:100%;margin-top:12px">Enviar Reporte</button>
+
+                    <!-- Visual Flow -->
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 24px; align-items: center; margin-bottom: 48px;">
+                        <!-- Step 1: Physical QR -->
+                        <div class="card" style="text-align: center; padding: 32px;">
+                            <div style="font-size: 12px; font-weight: 600; color: var(--indigo-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Paso 1</div>
+                            <div class="qr-code" style="margin: 0 auto 16px;"><div class="qr-pattern"></div></div>
+                            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Etiqueta en el equipo</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">HVAC Piso 12</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="color: var(--text-muted);">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+
+                        <!-- Step 2: Scan -->
+                        <div class="card" style="text-align: center; padding: 32px;">
+                            <div style="font-size: 12px; font-weight: 600; color: var(--indigo-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Paso 2</div>
+                            <div style="width: 80px; height: 80px; background: var(--bg-secondary); border-radius: 16px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="40" height="40" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Inquilino escanea</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Con su celular</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div style="color: var(--text-muted);">
+                            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </div>
+
+                        <!-- Step 3: Form -->
+                        <div class="card" style="text-align: center; padding: 32px;">
+                            <div style="font-size: 12px; font-weight: 600; color: var(--indigo-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Paso 3</div>
+                            <div style="width: 80px; height: 80px; background: var(--emerald-50); border-radius: 16px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="40" height="40" fill="none" stroke="var(--emerald-600)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Ticket creado</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Equipo ya identificado</div>
+                        </div>
+                    </div>
+
+                    <!-- Two panels side by side -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <!-- Tenant View -->
+                        <div class="card">
+                            <div class="card-header" style="background: var(--emerald-50);">
+                                <h3 class="card-title" style="color: var(--emerald-700);">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: inline; vertical-align: -4px; margin-right: 8px;"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                                    Lo que ve el inquilino
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 20px;">
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Equipo</div>
+                                        <div style="font-size: 15px; font-weight: 600; color: var(--text-primary);">HVAC Piso 12 - Unidad 12-A</div>
+                                        <div style="font-size: 13px; color: var(--emerald-600);">✓ Identificado automáticamente</div>
+                                    </div>
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Ubicación</div>
+                                        <div style="font-size: 14px; color: var(--text-primary);">Piso 12, Zona Norte</div>
+                                    </div>
+                                    <div style="margin-bottom: 16px;">
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">¿Cuál es el problema?</div>
+                                        <div style="background: white; border: 1px solid var(--border); border-radius: 6px; padding: 12px; color: var(--text-muted); font-size: 14px;">No enfría bien...</div>
+                                    </div>
+                                    <button class="btn btn-primary" style="width: 100%;">Enviar Reporte</button>
+                                </div>
+                                <div style="margin-top: 16px; text-align: center; font-size: 13px; color: var(--text-secondary);">
+                                    Sin buscar "¿qué equipo es?" — ya está pre-llenado
                                 </div>
                             </div>
-                            <div class="demo-panel">
-                                <div class="demo-panel-header">Vista del Técnico</div>
-                                <div class="demo-panel-body">
-                                    <div class="mock-form-field"><div class="mock-form-label">Historial de Mantenimiento</div></div>
-                                    <div class="history-item"><div class="history-dot"></div><div><div class="history-text">Cambio de filtros</div><div class="history-date">15 Ene 2026 - Miguel H.</div></div></div>
-                                    <div class="history-item"><div class="history-dot"></div><div><div class="history-text">Recarga de gas refrigerante</div><div class="history-date">3 Dic 2025 - Ana G.</div></div></div>
-                                    <div class="history-item"><div class="history-dot"></div><div><div class="history-text">Limpieza de serpentín</div><div class="history-date">18 Oct 2025 - Miguel H.</div></div></div>
+                        </div>
+
+                        <!-- Tech View -->
+                        <div class="card">
+                            <div class="card-header" style="background: var(--indigo-50);">
+                                <h3 class="card-title" style="color: var(--indigo-700);">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: inline; vertical-align: -4px; margin-right: 8px;"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Lo que ve el técnico
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">HVAC Piso 12 - Unidad 12-A</div>
+                                <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">Marca: Carrier | Modelo: 38CKC036 | Instalado: 2018</div>
+                                
+                                <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px;">Historial de Mantenimiento</div>
+                                
+                                <div style="border-left: 2px solid var(--border); padding-left: 16px;">
+                                    <div style="margin-bottom: 16px; position: relative;">
+                                        <div style="position: absolute; left: -21px; top: 4px; width: 10px; height: 10px; background: var(--indigo-500); border-radius: 50%;"></div>
+                                        <div style="font-size: 14px; font-weight: 500; color: var(--text-primary);">Cambio de filtros</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">15 Ene 2026 — Miguel H.</div>
+                                    </div>
+                                    <div style="margin-bottom: 16px; position: relative;">
+                                        <div style="position: absolute; left: -21px; top: 4px; width: 10px; height: 10px; background: var(--indigo-500); border-radius: 50%;"></div>
+                                        <div style="font-size: 14px; font-weight: 500; color: var(--text-primary);">Recarga de gas refrigerante</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">3 Dic 2025 — Ana G.</div>
+                                    </div>
+                                    <div style="position: relative;">
+                                        <div style="position: absolute; left: -21px; top: 4px; width: 10px; height: 10px; background: var(--indigo-500); border-radius: 50%;"></div>
+                                        <div style="font-size: 14px; font-weight: 500; color: var(--text-primary);">Limpieza de serpentín</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">18 Oct 2025 — Miguel H.</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 20px; padding: 12px 16px; background: var(--amber-50); border-radius: var(--radius-md); font-size: 13px; color: var(--amber-700);">
+                                    <strong>Nota:</strong> Último reporte de "no enfría" fue hace 3 meses — revisar compresor
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats banner -->
+                    <div style="margin-top: 32px; padding: 24px; background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-light); display: flex; justify-content: center; gap: 64px; text-align: center;">
+                        <div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--indigo-600);">247</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Activos etiquetados</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--emerald-600);">89%</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Tickets con activo identificado</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--amber-600);">-40%</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Tickets mal enrutados</div>
                         </div>
                     </div>
                 </section>
