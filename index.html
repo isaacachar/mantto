@@ -1324,6 +1324,7 @@
                     <span class="page-title" id="pageTitle">Dashboard</span>
                 </div>
                 <div class="topbar-right">
+                    <span id="currentTime" style="color: var(--text-secondary); font-size: 14px; margin-right: 16px;"></span>
                     <button class="btn btn-primary" onclick="openModal()">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         Nueva Orden
@@ -2037,6 +2038,15 @@
         renderOrders();
         renderTeam();
         setTimeout(() => selectFloor(12), 100);
+
+        // Update current time
+        function updateTime() {
+            const now = new Date();
+            const options = { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' };
+            document.getElementById('currentTime').textContent = now.toLocaleDateString('es-MX', options);
+        }
+        updateTime();
+        setInterval(updateTime, 60000);
     </script>
 </body>
 </html>
