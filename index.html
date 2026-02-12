@@ -1967,7 +1967,7 @@
                                 </div>
                                 <div class="savings-box"><div class="savings-label">Ahorro potencial</div><div class="savings-value">$36,500 MXN</div></div>
                             </div>
-                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%">Programar Mantenimiento Preventivo</button></div>
+                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%" onclick="showToast('Mantenimiento programado para HVAC 12-A', 'success')">Programar Mantenimiento Preventivo</button></div>
                         </div>
                         <div class="prediction-card">
                             <div class="prediction-header">
@@ -1983,7 +1983,7 @@
                                 </div>
                                 <div class="savings-box"><div class="savings-label">Ahorro potencial</div><div class="savings-value">$73,000 MXN</div></div>
                             </div>
-                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%">Programar Mantenimiento Preventivo</button></div>
+                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%" onclick="showToast('Mantenimiento programado para Bomba #2', 'success')">Programar Mantenimiento Preventivo</button></div>
                         </div>
                         <div class="prediction-card">
                             <div class="prediction-header">
@@ -1999,7 +1999,7 @@
                                 </div>
                                 <div class="savings-box"><div class="savings-label">Ahorro potencial</div><div class="savings-value">$155,000 MXN</div></div>
                             </div>
-                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%">Programar Mantenimiento Preventivo</button></div>
+                            <div class="prediction-footer"><button class="btn btn-primary" style="width:100%" onclick="showToast('Mantenimiento programado para Elevador B', 'success')">Programar Mantenimiento Preventivo</button></div>
                         </div>
                     </div>
                 </section>
@@ -2189,7 +2189,7 @@
                     <div class="card" style="margin-top: 32px;">
                         <div class="card-header">
                             <h3 class="card-title">Todos los Activos Etiquetados</h3>
-                            <button class="btn btn-secondary" style="padding: 8px 12px; font-size: 13px;">
+                            <button class="btn btn-secondary" style="padding: 8px 12px; font-size: 13px;" onclick="showToast('Formulario de nuevo activo', 'success')">
                                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                                 Agregar Activo
                             </button>
@@ -2213,7 +2213,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--indigo-50); color: var(--indigo-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">15 Ene 2026</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Elevador A - Motor</td>
@@ -2221,7 +2221,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Elevadores</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">8 Feb 2026</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Bomba de Agua #2</td>
@@ -2229,7 +2229,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--blue-50); color: var(--blue-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Plomería</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">22 Dic 2025</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Mantenimiento</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Generador de Emergencia</td>
@@ -2237,7 +2237,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">1 Feb 2026</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Tablero Eléctrico P15</td>
@@ -2245,7 +2245,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">10 Ene 2026</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 16px 24px; font-weight: 500;">Sistema Contra Incendios</td>
@@ -2253,7 +2253,7 @@
                                         <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Seguridad</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">5 Feb 2026</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
-                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);">Ver QR</button></td>
+                                        <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -2306,7 +2306,7 @@
                             <div style="font-weight: 600; color: var(--amber-800);">8 partes con stock bajo</div>
                             <div style="font-size: 13px; color: var(--amber-700);">Filtros HVAC, Focos LED, y 6 más necesitan reorden</div>
                         </div>
-                        <button class="btn btn-secondary" style="background: white;">Ver Todas</button>
+                        <button class="btn btn-secondary" style="background: white;" onclick="showToast('Mostrando 8 partes con stock bajo', 'success')">Ver Todas</button>
                     </div>
 
                     <!-- Inventory Table -->
@@ -2315,7 +2315,7 @@
                             <h3 class="card-title">Inventario de Partes</h3>
                             <div style="display: flex; gap: 12px;">
                                 <input type="text" placeholder="Buscar parte..." style="padding: 8px 14px; border: 1px solid var(--border); border-radius: var(--radius-md); font-size: 14px; width: 240px;">
-                                <button class="btn btn-primary" style="padding: 8px 14px;">
+                                <button class="btn btn-primary" style="padding: 8px 14px;" onclick="showToast('Formulario de nueva parte', 'success')">
                                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                                     Agregar
                                 </button>
@@ -2400,12 +2400,12 @@
                     <div class="vendors-section">
                         <h3>Proveedores Verificados</h3>
                         <div class="vendors-grid">
-                            <div class="vendor-card selected"><div class="vendor-logo">EO</div><div><div class="vendor-name">Elevadores Otis</div><div class="vendor-rating">★★★★★ 4.8</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$$$$</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">ES</div><div><div class="vendor-name">Elevadores Schindler</div><div class="vendor-rating">★★★★☆ 4.6</div><div class="vendor-meta">Respuesta: 4h</div></div><div class="vendor-price">$$$</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">PE</div><div><div class="vendor-name">Plomería Express</div><div class="vendor-rating">★★★★☆ 4.5</div><div class="vendor-meta">Respuesta: 1h</div></div><div class="vendor-price">$$</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">HS</div><div><div class="vendor-name">HVAC Solutions MX</div><div class="vendor-rating">★★★★★ 4.9</div><div class="vendor-meta">Respuesta: 3h</div></div><div class="vendor-price">$$$</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">EF</div><div><div class="vendor-name">ElectroFix CDMX</div><div class="vendor-rating">★★★★☆ 4.7</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$$</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">MI</div><div><div class="vendor-name">Mantenimiento Integral</div><div class="vendor-rating">★★★★☆ 4.4</div><div class="vendor-meta">Respuesta: 6h</div></div><div class="vendor-price">$</div></div>
+                            <div class="vendor-card selected"><div class="vendor-logo">EO</div><div><div class="vendor-name">Elevadores Otis</div><div class="vendor-rating">4.8</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$25-40k</div></div>
+                            <div class="vendor-card"><div class="vendor-logo">ES</div><div><div class="vendor-name">Elevadores Schindler</div><div class="vendor-rating">4.6</div><div class="vendor-meta">Respuesta: 4h</div></div><div class="vendor-price">$20-35k</div></div>
+                            <div class="vendor-card"><div class="vendor-logo">PE</div><div><div class="vendor-name">Plomería Express</div><div class="vendor-rating">4.5</div><div class="vendor-meta">Respuesta: 1h</div></div><div class="vendor-price">$2-8k</div></div>
+                            <div class="vendor-card"><div class="vendor-logo">HS</div><div><div class="vendor-name">HVAC Solutions MX</div><div class="vendor-rating">4.9</div><div class="vendor-meta">Respuesta: 3h</div></div><div class="vendor-price">$5-15k</div></div>
+                            <div class="vendor-card"><div class="vendor-logo">EF</div><div><div class="vendor-name">ElectroFix CDMX</div><div class="vendor-rating">4.7</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$3-10k</div></div>
+                            <div class="vendor-card"><div class="vendor-logo">MI</div><div><div class="vendor-name">Mantenimiento Integral</div><div class="vendor-rating">4.4</div><div class="vendor-meta">Respuesta: 6h</div></div><div class="vendor-price">$1-5k</div></div>
                         </div>
                     </div>
                     <div class="quotes-comparison">
@@ -2962,14 +2962,6 @@
             requestAnimationFrame(update);
         }
 
-        // Trigger stat animations on page load
-        setTimeout(() => {
-            const stats = document.querySelectorAll('#dashboard .stat-value');
-            if (stats[0]) animateValue(stats[0], 0, 12, 800);
-            if (stats[1]) animateValue(stats[1], 0, 2.3, 800, 'h');
-            if (stats[2]) animateValue(stats[2], 0, 98, 800, '%');
-            if (stats[3]) animateValue(stats[3], 0, 47.2, 800, 'k');
-        }, 200);
-    </script>
+            </script>
 </body>
 </html>
