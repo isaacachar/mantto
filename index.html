@@ -224,7 +224,7 @@
         .legend-dot.urgent { background: var(--red-500); }
         .legend-dot.pending { background: var(--amber-500); }
         .legend-dot.resolved { background: var(--emerald-500); }
-        .legend-dot.staff { background: var(--blue-500); }
+        .legend-dot.staff { background: var(--indigo-500); }
 
         .floor-list { max-height: 520px; overflow-y: auto; }
 
@@ -239,28 +239,18 @@
 
         .floor-bar-container { flex: 1; position: relative; }
         .floor-bar { height: 24px; border-radius: 4px; position: relative; }
-        .floor-bar.level-0 { background: #e0e7ff; }
-        .floor-bar.level-1 { background: #c7d2fe; }
-        .floor-bar.level-2 { background: #ddd6fe; }
-        .floor-bar.level-3 { background: #f5d0fe; }
-        .floor-bar.level-4 { background: #fbcfe8; }
+        .floor-bar.level-0 { background: var(--bg-secondary); }
+        .floor-bar.level-1 { background: #d1fae5; }
+        .floor-bar.level-2 { background: #fef3c7; }
+        .floor-bar.level-3 { background: #fed7aa; }
+        .floor-bar.level-4 { background: #fecaca; }
 
-        .floor-dot {
-            position: absolute; width: 12px; height: 12px; border-radius: 50%;
-            top: 50%; transform: translateY(-50%);
-            border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); z-index: 1;
-        }
-        .floor-dot.urgent { background: var(--red-500); }
-        .floor-dot.pending { background: var(--amber-500); }
-        .floor-dot.resolved { background: var(--emerald-500); }
-        .floor-dot.staff { background: var(--blue-500); }
-
-        .floor-summary { display: flex; gap: 3px; width: 56px; justify-content: flex-end; padding-right: 4px; }
-        .mini-dot { width: 8px; height: 8px; border-radius: 50%; }
-        .mini-dot.urgent { background: var(--red-500); }
-        .mini-dot.pending { background: var(--amber-500); }
-        .mini-dot.resolved { background: var(--emerald-500); }
-        .mini-dot.staff { background: var(--blue-500); }
+        .floor-summary { display: flex; gap: 4px; width: 80px; justify-content: flex-end; align-items: center; }
+        .summary-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .summary-dot.urgent { background: var(--red-500); }
+        .summary-dot.pending { background: var(--amber-500); }
+        .summary-dot.resolved { background: var(--emerald-500); }
+        .summary-dot.staff { background: var(--indigo-500); }
 
         /* Detail Panel */
         .floor-detail-panel {
@@ -2686,19 +2676,20 @@
                 const row = document.createElement('div');
                 row.className = 'floor-row' + (selectedFloor === floor.floor ? ' selected' : '');
                 row.onclick = () => selectFloor(floor.floor);
-                const activeIncidents = floor.incidents.filter(i => i.status !== 'staff' && i.status !== 'resolved');
-                const level = Math.min(4, activeIncidents.length);
-                let dotsHtml = floor.incidents.map(inc => `<div class="floor-dot ${inc.status}" style="left: ${inc.position}%"><span class="floor-dot-tooltip">${inc.title}</span></div>`).join('');
                 const urgent = floor.incidents.filter(i => i.status === 'urgent').length;
                 const pending = floor.incidents.filter(i => i.status === 'pending').length;
                 const resolved = floor.incidents.filter(i => i.status === 'resolved').length;
                 const staff = floor.incidents.filter(i => i.status === 'staff').length;
+                // Bar intensity based on active issues
+                const activeIssues = urgent + pending;
+                const level = urgent > 0 ? 4 : (activeIssues > 1 ? 3 : (activeIssues > 0 ? 2 : (resolved > 0 ? 1 : 0)));
+                // Summary dots only (no dots on bar)
                 let summaryDots = '';
-                for (let i = 0; i < Math.min(urgent, 3); i++) summaryDots += '<div class="mini-dot urgent"></div>';
-                for (let i = 0; i < Math.min(pending, 3); i++) summaryDots += '<div class="mini-dot pending"></div>';
-                for (let i = 0; i < Math.min(resolved, 2); i++) summaryDots += '<div class="mini-dot resolved"></div>';
-                for (let i = 0; i < Math.min(staff, 2); i++) summaryDots += '<div class="mini-dot staff"></div>';
-                row.innerHTML = `<div class="floor-label">P${floor.floor}</div><div class="floor-bar-container"><div class="floor-bar level-${level}">${dotsHtml}</div></div><div class="floor-summary">${summaryDots}</div>`;
+                for (let i = 0; i < urgent; i++) summaryDots += '<div class="summary-dot urgent"></div>';
+                for (let i = 0; i < pending; i++) summaryDots += '<div class="summary-dot pending"></div>';
+                for (let i = 0; i < resolved; i++) summaryDots += '<div class="summary-dot resolved"></div>';
+                for (let i = 0; i < staff; i++) summaryDots += '<div class="summary-dot staff"></div>';
+                row.innerHTML = `<div class="floor-label">P${floor.floor}</div><div class="floor-bar-container"><div class="floor-bar level-${level}"></div></div><div class="floor-summary">${summaryDots}</div>`;
                 container.appendChild(row);
             });
         }
