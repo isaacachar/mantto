@@ -1262,6 +1262,79 @@
             white-space: nowrap;
         }
 
+        /* Tech List for Tracking */
+        .tech-list-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+
+        .tech-list-item:hover {
+            background: var(--bg-secondary);
+        }
+
+        .tech-list-item.active {
+            background: var(--indigo-50);
+            border-left: 3px solid var(--indigo-600);
+        }
+
+        .tech-list-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--indigo-100);
+            color: var(--indigo-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .tech-list-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tech-list-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tech-list-status {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .tech-list-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .tech-list-badge.in-transit {
+            background: var(--amber-50);
+            color: var(--amber-600);
+        }
+
+        .tech-list-badge.working {
+            background: var(--indigo-50);
+            color: var(--indigo-600);
+        }
+
+        .tech-list-badge.available {
+            background: var(--emerald-50);
+            color: var(--emerald-600);
+        }
+
         /* ROI Summary Banner */
         .roi-banner {
             background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
@@ -1551,19 +1624,69 @@
 
                 <!-- Live Tracking -->
                 <section class="view" id="tracking">
-                    <div class="tracking-grid">
+                    <div style="display: grid; grid-template-columns: 300px 1fr 400px; gap: 24px;">
+                        <!-- Tech List -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Técnicos Activos</h3>
+                            </div>
+                            <div style="padding: 0;">
+                                <div class="tech-list-item active" onclick="selectTech(0)">
+                                    <div class="tech-list-avatar">MH</div>
+                                    <div class="tech-list-info">
+                                        <div class="tech-list-name">Miguel Hernández</div>
+                                        <div class="tech-list-status">En camino a Piso 12</div>
+                                    </div>
+                                    <div class="tech-list-badge in-transit">En camino</div>
+                                </div>
+                                <div class="tech-list-item" onclick="selectTech(1)">
+                                    <div class="tech-list-avatar">AG</div>
+                                    <div class="tech-list-info">
+                                        <div class="tech-list-name">Ana García</div>
+                                        <div class="tech-list-status">Trabajando en Piso 8</div>
+                                    </div>
+                                    <div class="tech-list-badge working">Trabajando</div>
+                                </div>
+                                <div class="tech-list-item" onclick="selectTech(2)">
+                                    <div class="tech-list-avatar">RL</div>
+                                    <div class="tech-list-info">
+                                        <div class="tech-list-name">Roberto López</div>
+                                        <div class="tech-list-status">En camino a Piso 22</div>
+                                    </div>
+                                    <div class="tech-list-badge in-transit">En camino</div>
+                                </div>
+                                <div class="tech-list-item" onclick="selectTech(3)">
+                                    <div class="tech-list-avatar">CR</div>
+                                    <div class="tech-list-info">
+                                        <div class="tech-list-name">Carmen Ruiz</div>
+                                        <div class="tech-list-status">Trabajando en Piso 15</div>
+                                    </div>
+                                    <div class="tech-list-badge working">Trabajando</div>
+                                </div>
+                                <div class="tech-list-item" onclick="selectTech(4)">
+                                    <div class="tech-list-avatar">LS</div>
+                                    <div class="tech-list-info">
+                                        <div class="tech-list-name">Laura Sánchez</div>
+                                        <div class="tech-list-status">Disponible en Piso 27</div>
+                                    </div>
+                                    <div class="tech-list-badge available">Disponible</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tracking Detail -->
                         <div>
                             <div class="tracking-card" style="margin-bottom: 24px;">
                                 <div class="tracking-header">
-                                    <div class="tracking-avatar">MH</div>
+                                    <div class="tracking-avatar" id="trackingAvatar">MH</div>
                                     <div>
-                                        <div class="tracking-tech-name">Miguel Hernández</div>
-                                        <div class="tracking-tech-role">Técnico HVAC</div>
+                                        <div class="tracking-tech-name" id="trackingName">Miguel Hernández</div>
+                                        <div class="tracking-tech-role" id="trackingRole">Técnico HVAC</div>
                                     </div>
-                                    <div class="tracking-eta">ETA ~5 min</div>
+                                    <div class="tracking-eta" id="trackingEta">ETA ~5 min</div>
                                 </div>
                                 <div class="tracking-progress">
-                                    <div class="progress-steps">
+                                    <div class="progress-steps" id="trackingSteps">
                                         <div class="progress-step completed">
                                             <div class="step-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
                                             <div class="step-label">Asignado</div>
@@ -1587,14 +1710,16 @@
                                     </div>
                                 </div>
                                 <div class="tracking-order">
-                                    <div class="tracking-order-title">HVAC no enfría correctamente</div>
-                                    <div class="tracking-order-location">Piso 12, Oficina 1205</div>
+                                    <div class="tracking-order-title" id="trackingOrderTitle">HVAC no enfría correctamente</div>
+                                    <div class="tracking-order-location" id="trackingOrderLocation">Piso 12, Oficina 1205</div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Map -->
                         <div class="tracking-map">
                             <div class="map-building">🏢</div>
-                            <div class="map-marker" style="top: 35%; left: 55%;"><span>MH</span></div>
+                            <div class="map-marker" id="trackingMarker" style="top: 35%; left: 55%;"><span>MH</span></div>
                         </div>
                     </div>
                 </section>
@@ -2166,6 +2291,46 @@
 
         function closeDrawer() {
             document.getElementById('drawerOverlay').classList.remove('active');
+        }
+
+        // Tech tracking data
+        const trackingData = [
+            { initials: 'MH', name: 'Miguel Hernández', role: 'Técnico HVAC', eta: '~5 min', order: 'HVAC no enfría correctamente', location: 'Piso 12, Oficina 1205', step: 2, markerPos: { top: '35%', left: '55%' } },
+            { initials: 'AG', name: 'Ana García', role: 'Electricista', eta: 'En sitio', order: 'Tomacorriente no funciona', location: 'Piso 8, Sala de juntas', step: 3, markerPos: { top: '60%', left: '40%' } },
+            { initials: 'RL', name: 'Roberto López', role: 'Plomero', eta: '~12 min', order: 'Puerta de emergencia atascada', location: 'Piso 22, Escalera B', step: 1, markerPos: { top: '25%', left: '65%' } },
+            { initials: 'CR', name: 'Carmen Ruiz', role: 'Técnico General', eta: 'En sitio', order: 'Luz fundida en pasillo', location: 'Piso 15, Pasillo norte', step: 3, markerPos: { top: '45%', left: '50%' } },
+            { initials: 'LS', name: 'Laura Sánchez', role: 'Técnico HVAC', eta: 'Disponible', order: 'Sin tarea asignada', location: 'Piso 27', step: 0, markerPos: { top: '20%', left: '45%' } }
+        ];
+
+        function selectTech(index) {
+            const tech = trackingData[index];
+            
+            // Update list selection
+            document.querySelectorAll('.tech-list-item').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+
+            // Update tracking card
+            document.getElementById('trackingAvatar').textContent = tech.initials;
+            document.getElementById('trackingName').textContent = tech.name;
+            document.getElementById('trackingRole').textContent = tech.role;
+            document.getElementById('trackingEta').textContent = tech.step === 0 ? 'Disponible' : 'ETA ' + tech.eta;
+            document.getElementById('trackingOrderTitle').textContent = tech.order;
+            document.getElementById('trackingOrderLocation').textContent = tech.location;
+
+            // Update progress steps
+            const steps = document.querySelectorAll('#trackingSteps .progress-step');
+            steps.forEach((step, i) => {
+                step.classList.remove('completed', 'current');
+                if (i < tech.step) step.classList.add('completed');
+                if (i === tech.step) step.classList.add('current');
+            });
+
+            // Update marker
+            const marker = document.getElementById('trackingMarker');
+            marker.style.top = tech.markerPos.top;
+            marker.style.left = tech.markerPos.left;
+            marker.querySelector('span').textContent = tech.initials;
         }
         function createOrder() { 
             showToast('Orden creada', 'Ticket #848 asignado a Miguel Hernández', 'success');
