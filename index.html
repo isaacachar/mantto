@@ -1129,6 +1129,46 @@
         }
 
         .table-row { cursor: pointer; }
+
+        /* Floor Dot Tooltips */
+        .floor-dot {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .floor-dot-tooltip {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-primary);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.15s ease;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .floor-dot-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--text-primary);
+        }
+
+        .floor-dot:hover .floor-dot-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -1773,7 +1813,7 @@
                 row.onclick = () => selectFloor(floor.floor);
                 const activeIncidents = floor.incidents.filter(i => i.status !== 'staff' && i.status !== 'resolved');
                 const level = Math.min(4, activeIncidents.length);
-                let dotsHtml = floor.incidents.map(inc => `<div class="floor-dot ${inc.status}" style="left: ${inc.position}%"></div>`).join('');
+                let dotsHtml = floor.incidents.map(inc => `<div class="floor-dot ${inc.status}" style="left: ${inc.position}%"><span class="floor-dot-tooltip">${inc.title}</span></div>`).join('');
                 const urgent = floor.incidents.filter(i => i.status === 'urgent').length;
                 const pending = floor.incidents.filter(i => i.status === 'pending').length;
                 const resolved = floor.incidents.filter(i => i.status === 'resolved').length;
