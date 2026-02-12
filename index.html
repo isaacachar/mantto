@@ -2047,6 +2047,43 @@
         }
         updateTime();
         setInterval(updateTime, 60000);
+
+        // Animated count-up for stats
+        function animateValue(element, start, end, duration, suffix = '') {
+            const range = end - start;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = start + (range * easeOut);
+                
+                if (suffix === 'h') {
+                    element.textContent = current.toFixed(1) + suffix;
+                } else if (suffix === '%') {
+                    element.textContent = Math.round(current) + suffix;
+                } else if (suffix === 'k') {
+                    element.textContent = '$' + current.toFixed(1) + suffix;
+                } else {
+                    element.textContent = Math.round(current);
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        // Trigger stat animations on page load
+        setTimeout(() => {
+            const stats = document.querySelectorAll('#dashboard .stat-value');
+            if (stats[0]) animateValue(stats[0], 0, 12, 800);
+            if (stats[1]) animateValue(stats[1], 0, 2.3, 800, 'h');
+            if (stats[2]) animateValue(stats[2], 0, 98, 800, '%');
+            if (stats[3]) animateValue(stats[3], 0, 47.2, 800, 'k');
+        }, 200);
     </script>
 </body>
 </html>
