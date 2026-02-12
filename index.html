@@ -865,6 +865,7 @@
             padding: 20px 24px; background: var(--bg-secondary);
             font-weight: 600; color: var(--text-primary);
             border-bottom: 1px solid var(--border-light);
+            display: flex; justify-content: space-between; align-items: center;
         }
 
         .quotes-table { width: 100%; }
@@ -2397,25 +2398,137 @@
 
                 <!-- Vendors -->
                 <section class="view" id="vendors">
-                    <div class="vendors-section">
-                        <h3>Proveedores Verificados</h3>
-                        <div class="vendors-grid">
-                            <div class="vendor-card selected"><div class="vendor-logo">EO</div><div><div class="vendor-name">Elevadores Otis</div><div class="vendor-rating">4.8</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$25-40k</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">ES</div><div><div class="vendor-name">Elevadores Schindler</div><div class="vendor-rating">4.6</div><div class="vendor-meta">Respuesta: 4h</div></div><div class="vendor-price">$20-35k</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">PE</div><div><div class="vendor-name">Plomería Express</div><div class="vendor-rating">4.5</div><div class="vendor-meta">Respuesta: 1h</div></div><div class="vendor-price">$2-8k</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">HS</div><div><div class="vendor-name">HVAC Solutions MX</div><div class="vendor-rating">4.9</div><div class="vendor-meta">Respuesta: 3h</div></div><div class="vendor-price">$5-15k</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">EF</div><div><div class="vendor-name">ElectroFix CDMX</div><div class="vendor-rating">4.7</div><div class="vendor-meta">Respuesta: 2h</div></div><div class="vendor-price">$3-10k</div></div>
-                            <div class="vendor-card"><div class="vendor-logo">MI</div><div><div class="vendor-name">Mantenimiento Integral</div><div class="vendor-rating">4.4</div><div class="vendor-meta">Respuesta: 6h</div></div><div class="vendor-price">$1-5k</div></div>
+                    <!-- Header with action -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <div>
+                            <h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin: 0;">Proveedores Verificados</h2>
+                            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 0;">6 proveedores activos · 23 trabajos completados este año</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="showToast('Solicitud de cotización enviada a 3 proveedores', 'success')">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                            Solicitar Cotización
+                        </button>
+                    </div>
+
+                    <!-- Filter tabs -->
+                    <div class="filters-bar" style="margin-bottom: 24px;">
+                        <button class="filter-btn active">Todos (6)</button>
+                        <button class="filter-btn">Elevadores (2)</button>
+                        <button class="filter-btn">HVAC (1)</button>
+                        <button class="filter-btn">Plomería (1)</button>
+                        <button class="filter-btn">Eléctrico (1)</button>
+                        <button class="filter-btn">General (1)</button>
+                    </div>
+
+                    <!-- Vendor cards -->
+                    <div class="vendors-grid">
+                        <div class="vendor-card">
+                            <div class="vendor-logo">EO</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Elevadores Otis</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Especialista en elevadores · 12 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.8</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$25-40k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">ES</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Elevadores Schindler</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Especialista en elevadores · 8 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.6</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>4h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$20-35k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">HS</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">HVAC Solutions MX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Aire acondicionado y ventilación · 15 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.9</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>3h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$5-15k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">PE</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Plomería Express</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Plomería comercial e industrial · 21 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.5</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>1h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$2-8k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">EF</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">ElectroFix CDMX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Instalaciones eléctricas · 9 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.7</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$3-10k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">MI</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Mantenimiento Integral</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Servicios generales · 34 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.4</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>6h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$1-5k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="quotes-comparison">
-                        <div class="quotes-header">Cotizaciones Recibidas — Reparación Elevador B</div>
+
+                    <!-- Quote comparison -->
+                    <div class="quotes-comparison" style="margin-top: 32px;">
+                        <div class="quotes-header">
+                            <div>
+                                <span style="font-weight: 600;">Cotizaciones Recibidas</span>
+                                <span style="color: var(--text-secondary); font-weight: 400;"> — Reparación Elevador B</span>
+                            </div>
+                            <span style="font-size: 12px; color: var(--text-muted);">Solicitado hace 2 días</span>
+                        </div>
                         <table class="quotes-table">
-                            <thead><tr><th>Proveedor</th><th>Precio</th><th>Tiempo</th><th>Garantía</th><th></th></tr></thead>
+                            <thead><tr><th>Proveedor</th><th>Precio</th><th>Tiempo</th><th>Garantía</th><th>Incluye</th><th></th></tr></thead>
                             <tbody>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">EO</div>Elevadores Otis</div></td><td><strong>$28,500</strong></td><td>3 días</td><td>12 meses</td><td><span class="quote-best">Mejor opción</span></td></tr>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">ES</div>Elevadores Schindler</td></td><td><strong>$32,000</strong></td><td>5 días</td><td>12 meses</td><td></td></tr>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">MI</div>Mantenimiento Integral</td></td><td><strong>$24,000</strong></td><td>7 días</td><td>6 meses</td><td></td></tr>
+                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">EO</div>Elevadores Otis</div></td><td><strong>$28,500</strong></td><td>3 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><span class="quote-best">Mejor opción</span></td></tr>
+                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">ES</div>Elevadores Schindler</td></td><td><strong>$32,000</strong></td><td>5 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
+                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">MI</div>Mantenimiento Integral</td></td><td><strong>$24,000</strong></td><td>7 días</td><td>6 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Solo mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
                             </tbody>
                         </table>
                     </div>
