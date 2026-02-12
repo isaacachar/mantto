@@ -1169,6 +1169,60 @@
             opacity: 1;
             visibility: visible;
         }
+
+        /* ROI Summary Banner */
+        .roi-banner {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 1px solid #a7f3d0;
+            border-radius: var(--radius-lg);
+            padding: 24px 32px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .roi-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .roi-banner-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--emerald-500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .roi-banner-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .roi-banner-label {
+            font-size: 14px;
+            color: var(--emerald-700);
+            font-weight: 500;
+        }
+
+        .roi-banner-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--emerald-600);
+            letter-spacing: -1px;
+        }
+
+        .roi-banner-detail {
+            font-size: 13px;
+            color: var(--emerald-700);
+            max-width: 280px;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -1477,6 +1531,22 @@
 
                 <!-- Predictive AI -->
                 <section class="view" id="predictive">
+                    <div class="roi-banner">
+                        <div class="roi-banner-content">
+                            <div class="roi-banner-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="roi-banner-label">Ahorro potencial identificado</div>
+                                <div class="roi-banner-value">$264,500 MXN</div>
+                            </div>
+                        </div>
+                        <div class="roi-banner-detail">
+                            3 equipos en riesgo detectados. Reparar antes de que fallen puede ahorrar hasta 85% del costo de emergencia.
+                        </div>
+                    </div>
                     <div class="predictions-grid">
                         <div class="prediction-card">
                             <div class="prediction-header">
