@@ -890,6 +890,75 @@
         .category-track { flex: 1; height: 24px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
         .category-fill { height: 100%; background: var(--indigo-500); border-radius: 4px; }
         .category-value { width: 50px; text-align: right; font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            border: 1px solid var(--border);
+            animation: toastIn 0.3s ease;
+            min-width: 320px;
+        }
+
+        .toast.success { border-left: 4px solid var(--emerald-500); }
+        .toast.error { border-left: 4px solid var(--red-500); }
+        .toast.warning { border-left: 4px solid var(--amber-500); }
+
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toast.success .toast-icon { background: var(--emerald-50); color: var(--emerald-600); }
+        .toast.error .toast-icon { background: var(--red-50); color: var(--red-600); }
+        .toast.warning .toast-icon { background: var(--amber-50); color: var(--amber-600); }
+
+        .toast-icon svg { width: 14px; height: 14px; }
+
+        .toast-content { flex: 1; }
+        .toast-title { font-weight: 600; color: var(--text-primary); font-size: 14px; }
+        .toast-message { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+        }
+        .toast-close:hover { color: var(--text-primary); }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes toastOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(100%); }
+        }
+
+        .toast.removing { animation: toastOut 0.3s ease forwards; }
     </style>
 </head>
 <body>
@@ -1426,7 +1495,42 @@
         </div>
     </div>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <script>
+        // Toast notification system
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icons = {
+                success: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>',
+                error: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>',
+                warning: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>'
+            };
+
+            toast.innerHTML = `
+                <div class="toast-icon">${icons[type]}</div>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    ${message ? `<div class="toast-message">${message}</div>` : ''}
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            `;
+
+            container.appendChild(toast);
+
+            // Auto-remove after 4 seconds
+            setTimeout(() => {
+                toast.classList.add('removing');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
         const team = [
             { id: 1, name: 'Miguel Hernández', initials: 'MH', role: 'Técnico HVAC', floor: 12, online: true, tasksToday: 4, completed: 3, avgTime: '1.8h' },
             { id: 2, name: 'Ana García', initials: 'AG', role: 'Electricista', floor: 8, online: true, tasksToday: 3, completed: 3, avgTime: '2.1h' },
@@ -1544,7 +1648,10 @@
 
         function openModal() { document.getElementById('modalOverlay').classList.add('active'); }
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
-        function createOrder() { alert('Orden creada exitosamente'); closeModal(); }
+        function createOrder() { 
+            showToast('Orden creada', 'Ticket #848 asignado a Miguel Hernández', 'success');
+            closeModal();
+        }
         document.getElementById('modalOverlay').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
