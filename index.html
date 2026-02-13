@@ -2922,23 +2922,128 @@
                         </div>
                     </div>
 
-                    <!-- Quote comparison -->
-                    <div class="quotes-comparison" style="margin-top: 32px;">
-                        <div class="quotes-header">
-                            <div>
-                                <span style="font-weight: 600;">Cotizaciones Recibidas</span>
-                                <span style="color: var(--text-secondary); font-weight: 400;"> — Reparación Elevador B</span>
-                            </div>
-                            <span style="font-size: 12px; color: var(--text-muted);">Solicitado hace 2 días</span>
+                    <!-- Active RFQs Section -->
+                    <div style="margin-top: 32px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin: 0;">Solicitudes de Cotización Activas</h3>
+                            <span style="font-size: 13px; color: var(--text-muted);">4 solicitudes · 2 pendientes de respuesta</span>
                         </div>
-                        <table class="quotes-table">
-                            <thead><tr><th>Proveedor</th><th>Precio</th><th>Tiempo</th><th>Garantía</th><th>Incluye</th><th></th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">EO</div>Elevadores Otis</div></td><td><strong>$28,500</strong></td><td>3 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><span class="quote-best">Mejor opción</span></td></tr>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">ES</div>Elevadores Schindler</td></td><td><strong>$32,000</strong></td><td>5 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
-                                <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">MI</div>Mantenimiento Integral</td></td><td><strong>$24,000</strong></td><td>7 días</td><td>6 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Solo mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
-                            </tbody>
-                        </table>
+                        
+                        <!-- RFQ List -->
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <!-- RFQ 1 - Expanded with quotes -->
+                            <div class="card" style="padding: 0; overflow: hidden;">
+                                <div style="padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleRfq('rfq1')">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></div>
+                                        <div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Reparación Elevador B</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">Elevadores · Piso 15 · Solicitado hace 2 días</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; font-weight: 500; color: var(--text-primary);">3 respuestas</div>
+                                            <div style="font-size: 11px; color: var(--text-muted);">Vence mañana</div>
+                                        </div>
+                                        <svg id="rfq1-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-muted); transform: rotate(180deg); transition: transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                    </div>
+                                </div>
+                                <div id="rfq1-content" style="border-top: 1px solid var(--border); padding: 16px; background: var(--bg-secondary);">
+                                    <table class="quotes-table">
+                                        <thead><tr><th>Proveedor</th><th>Precio</th><th>Tiempo</th><th>Garantía</th><th>Incluye</th><th></th></tr></thead>
+                                        <tbody>
+                                            <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">EO</div>Elevadores Otis</div></td><td><strong>$28,500</strong></td><td>3 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><span class="quote-best">Mejor opción</span></td></tr>
+                                            <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">ES</div>Elevadores Schindler</div></td><td><strong>$32,000</strong></td><td>5 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Refacciones + Mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
+                                            <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">TK</div>ThyssenKrupp</div></td><td><strong>$24,000</strong></td><td>7 días</td><td>6 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Solo mano de obra</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- RFQ 2 - Has responses, collapsed -->
+                            <div class="card" style="padding: 0; overflow: hidden;">
+                                <div style="padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleRfq('rfq2')">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></div>
+                                        <div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Cambio de filtros HVAC</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">HVAC · Pisos 10-15 · Solicitado hace 4 días</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; font-weight: 500; color: var(--text-primary);">2 respuestas</div>
+                                            <div style="font-size: 11px; color: var(--text-muted);">Vence en 3 días</div>
+                                        </div>
+                                        <svg id="rfq2-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-muted); transition: transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                    </div>
+                                </div>
+                                <div id="rfq2-content" style="border-top: 1px solid var(--border); padding: 16px; background: var(--bg-secondary); display: none;">
+                                    <table class="quotes-table">
+                                        <thead><tr><th>Proveedor</th><th>Precio</th><th>Tiempo</th><th>Garantía</th><th>Incluye</th><th></th></tr></thead>
+                                        <tbody>
+                                            <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">CA</div>Carrier México</div></td><td><strong>$18,200</strong></td><td>2 días</td><td>6 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Filtros + Instalación</td><td><span class="quote-best">Mejor opción</span></td></tr>
+                                            <tr><td><div class="quote-vendor"><div class="vendor-logo" style="width:36px;height:36px;font-size:12px">TR</div>Trane CDMX</div></td><td><strong>$21,500</strong></td><td>3 días</td><td>12 meses</td><td style="font-size: 12px; color: var(--text-secondary);">Filtros premium + Instalación</td><td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Cotización seleccionada', 'success')">Seleccionar</button></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- RFQ 3 - Waiting for responses -->
+                            <div class="card" style="padding: 0; overflow: hidden;">
+                                <div style="padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleRfq('rfq3')">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b;"></div>
+                                        <div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Impermeabilización azotea</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">General · Azotea · Solicitado hoy</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; font-weight: 500; color: var(--text-secondary);">Esperando respuestas</div>
+                                            <div style="font-size: 11px; color: var(--text-muted);">Enviado a 4 proveedores</div>
+                                        </div>
+                                        <svg id="rfq3-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-muted); transition: transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                    </div>
+                                </div>
+                                <div id="rfq3-content" style="border-top: 1px solid var(--border); padding: 16px; background: var(--bg-secondary); display: none;">
+                                    <div style="text-align: center; padding: 24px; color: var(--text-secondary);">
+                                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="margin: 0 auto 12px; opacity: 0.5;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <div style="font-size: 14px;">Esperando respuestas de proveedores</div>
+                                        <div style="font-size: 12px; margin-top: 4px;">Enviado a: MI, CP, PA, LC · Vence en 5 días</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RFQ 4 - Waiting for responses -->
+                            <div class="card" style="padding: 0; overflow: hidden;">
+                                <div style="padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleRfq('rfq4')">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b;"></div>
+                                        <div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Mantenimiento subestación eléctrica</div>
+                                            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">Eléctrico · Sótano · Solicitado ayer</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; font-weight: 500; color: var(--text-secondary);">Esperando respuestas</div>
+                                            <div style="font-size: 11px; color: var(--text-muted);">Enviado a 2 proveedores</div>
+                                        </div>
+                                        <svg id="rfq4-arrow" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-muted); transition: transform 0.2s;"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                    </div>
+                                </div>
+                                <div id="rfq4-content" style="border-top: 1px solid var(--border); padding: 16px; background: var(--bg-secondary); display: none;">
+                                    <div style="text-align: center; padding: 24px; color: var(--text-secondary);">
+                                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="margin: 0 auto 12px; opacity: 0.5;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <div style="font-size: 14px;">Esperando respuestas de proveedores</div>
+                                        <div style="font-size: 12px; margin-top: 4px;">Enviado a: SE, EF · Vence en 6 días</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -3182,6 +3287,19 @@
     </div>
 
     <script>
+        // RFQ accordion toggle
+        function toggleRfq(rfqId) {
+            const content = document.getElementById(rfqId + '-content');
+            const arrow = document.getElementById(rfqId + '-arrow');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
         // Toast notification system
         function showToast(title, message, type = 'success') {
             const container = document.getElementById('toastContainer');
