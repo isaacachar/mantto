@@ -17,6 +17,47 @@
             --text-muted: #94a3b8;
             --border: #e2e8f0;
             --border-light: #f1f5f9;
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #121212;
+            --bg-tertiary: #2d2d2d;
+            --text-primary: #f1f5f9;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border: #3f3f46;
+            --border-light: #27272a;
+        }
+        
+        [data-theme="dark"] .sidebar {
+            background: #0a0a0a;
+        }
+        
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .stat-card,
+        [data-theme="dark"] .prediction-card,
+        [data-theme="dark"] .team-card,
+        [data-theme="dark"] .tracking-card,
+        [data-theme="dark"] .asset-card,
+        [data-theme="dark"] .vendor-card,
+        [data-theme="dark"] .config-card {
+            background: var(--bg-primary);
+            border-color: var(--border);
+        }
+        
+        [data-theme="dark"] .nav-item.active {
+            background: var(--bg-tertiary);
+            color: #fff;
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+        
+        :root {
             
             --slate-100: #f1f5f9;
             --slate-600: #475569;
@@ -1738,6 +1779,9 @@
                     <span class="page-title" id="pageTitle">Dashboard</span>
                 </div>
                 <div class="topbar-right">
+                    <button onclick="toggleTheme()" style="width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; margin-right: 12px;" title="Toggle dark/light mode">
+                        <svg id="themeIcon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
                     <span id="currentTime" style="color: var(--text-secondary); font-size: 14px; margin-right: 16px;"></span>
                     <button class="btn btn-primary" id="newOrderBtn" onclick="openModal()">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
@@ -3108,6 +3152,33 @@
             document.querySelector('.sidebar').classList.toggle('open');
             document.querySelector('.sidebar-overlay').classList.toggle('active');
         }
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+        
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('themeIcon');
+            if (theme === 'dark') {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>';
+            }
+        }
+        
+        // Load saved theme on page load
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                updateThemeIcon('dark');
+            }
+        })();
         function openModal() { document.getElementById('modalOverlay').classList.add('active'); }
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
 
