@@ -1617,7 +1617,7 @@
                 </div>
                 <div class="topbar-right">
                     <span id="currentTime" style="color: var(--text-secondary); font-size: 14px; margin-right: 16px;"></span>
-                    <button class="btn btn-primary" onclick="openModal()">
+                    <button class="btn btn-primary" id="newOrderBtn" onclick="openModal()">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         Nueva Orden
                     </button>
@@ -2950,6 +2950,7 @@
 
         const pageTitles = { dashboard: 'Dashboard', floormap: 'Mapa del Edificio', orders: 'Órdenes de Trabajo', team: 'Equipo', predictive: 'IA Predictiva', compliance: 'Cumplimiento', assets: 'Activos QR', inventory: 'Refacciones', vendors: 'Proveedores', reports: 'Reportes', config: 'Configuración' };
 
+        const showNewOrderViews = ['dashboard', 'floormap', 'orders'];
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', () => {
                 const view = item.dataset.view;
@@ -2958,6 +2959,7 @@
                 document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
                 document.getElementById(view).classList.add('active');
                 document.getElementById('pageTitle').textContent = pageTitles[view];
+                document.getElementById('newOrderBtn').style.display = showNewOrderViews.includes(view) ? 'flex' : 'none';
             });
         });
 
