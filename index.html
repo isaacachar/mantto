@@ -101,8 +101,8 @@
         /* Badges */
         .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 9999px; }
         .badge--urgent { background: var(--red-500); color: #fff; }
-        .badge--warning { background: var(--amber-500); color: #fff; }
-        .badge--success { background: var(--emerald-500); color: #fff; }
+        .badge--warning { background: var(--text-muted); color: #fff; }
+        .badge--success { background: var(--text-secondary); color: #fff; }
         .badge--info { background: var(--indigo-500); color: #fff; }
         .badge--neutral { background: var(--bg-tertiary); color: var(--text-secondary); }
         .badge--outline { background: transparent; border: 1px solid currentColor; }
@@ -112,9 +112,9 @@
         
         /* Highlight Boxes (colored stat boxes) */
         .highlight-box { padding: 16px; border-radius: var(--radius-md); text-align: center; }
-        .highlight-box--success { background: var(--emerald-500); color: #fff; }
+        .highlight-box--success { background: var(--text-secondary); color: #fff; }
         .highlight-box--danger { background: var(--red-500); color: #fff; }
-        .highlight-box--warning { background: var(--amber-500); color: #fff; }
+        .highlight-box--warning { background: var(--text-muted); color: #fff; }
         .highlight-box--info { background: var(--indigo-500); color: #fff; }
         .highlight-box--muted { background: var(--bg-tertiary); color: var(--text-primary); }
         .highlight-box__label { font-size: 12px; opacity: 0.85; margin-bottom: 4px; }
@@ -132,8 +132,8 @@
         .timeline__item:last-child { border-bottom: none; }
         .timeline__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--indigo-500); margin-top: 6px; flex-shrink: 0; }
         .timeline__dot--urgent { background: var(--red-500); }
-        .timeline__dot--warning { background: var(--amber-500); }
-        .timeline__dot--success { background: var(--emerald-500); }
+        .timeline__dot--warning { background: var(--text-muted); }
+        .timeline__dot--success { background: var(--text-secondary); }
         .timeline__content { flex: 1; }
         .timeline__title { font-size: 14px; font-weight: 500; color: var(--text-primary); }
         .timeline__meta { font-size: 12px; color: var(--text-secondary); }
@@ -378,9 +378,9 @@
         .detail-stat-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
         .detail-stat-label { font-size: 14px; color: var(--text-secondary); }
         .detail-stat-value { font-size: 14px; font-weight: 600; }
-        .detail-stat-value.urgent { color: var(--red-600); }
-        .detail-stat-value.pending { color: var(--amber-600); }
-        .detail-stat-value.resolved { color: var(--emerald-600); }
+        .detail-stat-value.urgent { color: var(--text-primary); }
+        .detail-stat-value.pending { color: var(--text-primary); }
+        .detail-stat-value.resolved { color: var(--text-primary); }
 
         .detail-incidents { padding: 20px 24px; }
         .detail-section-title {
@@ -502,7 +502,7 @@
         }
         .team-avatar.online::after {
             content: ''; position: absolute; bottom: 2px; right: 2px;
-            width: 14px; height: 14px; background: var(--emerald-500);
+            width: 14px; height: 14px; background: var(--text-secondary);
             border: 3px solid var(--bg-primary); border-radius: 50%;
         }
 
@@ -630,7 +630,7 @@
             background: var(--bg-tertiary); color: var(--text-muted);
         }
         .step-icon svg { width: 16px; height: 16px; }
-        .progress-step.completed .step-icon { background: var(--emerald-500); color: white; }
+        .progress-step.completed .step-icon { background: var(--text-secondary); color: white; }
         .progress-step.current .step-icon {
             background: var(--indigo-600); color: white;
             animation: pulse 2s infinite;
@@ -849,8 +849,8 @@
             box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
         }
         .timeline-indicator.urgent { background: var(--red-500); box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2); }
-        .timeline-indicator.warning { background: var(--amber-500); box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2); }
-        .timeline-indicator.ok { background: var(--emerald-500); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
+        .timeline-indicator.warning { background: var(--text-muted); box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2); }
+        .timeline-indicator.ok { background: var(--text-secondary); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
 
         .timeline-content { flex: 1; }
         .timeline-title { font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
@@ -952,7 +952,7 @@
         }
 
         .vendor-name { font-weight: 600; color: var(--text-primary); }
-        .vendor-rating { display: flex; align-items: center; gap: 4px; font-size: 13px; color: var(--amber-600); margin: 4px 0; }
+        .vendor-rating { display: flex; align-items: center; gap: 4px; font-size: 13px; color: var(--text-primary); margin: 4px 0; }
         .vendor-meta { font-size: 12px; color: var(--text-secondary); }
         .vendor-price { margin-left: auto; font-weight: 600; color: var(--text-primary); }
 
@@ -1043,7 +1043,7 @@
             width: 44px; height: 24px; background: var(--bg-tertiary);
             border-radius: 12px; position: relative; cursor: pointer; transition: background 0.2s;
         }
-        .toggle.active { background: var(--emerald-500); }
+        .toggle.active { background: var(--text-secondary); }
         .toggle::after {
             content: ''; position: absolute; width: 20px; height: 20px;
             background: #fff; border-radius: 50%; top: 2px; left: 2px;
@@ -1090,8 +1090,8 @@
         .tech-name { display: flex; align-items: center; gap: 10px; }
         .tech-avatar-sm { width: 32px; height: 32px; border-radius: 50%; background: var(--indigo-100); color: var(--indigo-600); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
         .perf-bar { width: 60px; height: 6px; background: var(--bg-secondary); border-radius: 3px; overflow: hidden; }
-        .perf-fill { height: 100%; background: var(--emerald-500); border-radius: 3px; }
-        .perf-fill.medium { background: var(--amber-500); }
+        .perf-fill { height: 100%; background: var(--text-secondary); border-radius: 3px; }
+        .perf-fill.medium { background: var(--text-muted); }
         .perf-fill.low { background: var(--red-500); }
 
         /* Toast Notifications */
@@ -1118,9 +1118,9 @@
             min-width: 320px;
         }
 
-        .toast.success { border-left: 4px solid var(--emerald-500); }
+        .toast.success { border-left: 4px solid var(--text-secondary); }
         .toast.error { border-left: 4px solid var(--red-500); }
-        .toast.warning { border-left: 4px solid var(--amber-500); }
+        .toast.warning { border-left: 4px solid var(--text-muted); }
 
         .toast-icon {
             width: 24px;
@@ -1308,8 +1308,8 @@
         }
 
         .timeline-event.completed::before {
-            background: var(--emerald-500);
-            border-color: var(--emerald-500);
+            background: var(--text-secondary);
+            border-color: var(--text-secondary);
         }
 
         .timeline-event-title {
@@ -2193,31 +2193,31 @@
                             <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
                                 <div style="width: 10px; height: 10px; background: var(--red-500); border-radius: 50%; flex-shrink: 0;"></div>
                                 <div style="flex: 1;"><div style="font-weight: 500; color: var(--text-primary);">Licencia de Funcionamiento</div><div style="font-size: 13px; color: var(--text-secondary);">Vence: 1 de Marzo, 2026</div></div>
-                                <div style="font-weight: 600; color: var(--red-600);">17 días</div>
+                                <div style="font-weight: 600; color: var(--text-primary);">17 días</div>
                                 <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Marcado como completado', 'success')">Completar</button>
                             </div>
                             <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
                                 <div style="width: 10px; height: 10px; background: var(--red-500); border-radius: 50%; flex-shrink: 0;"></div>
                                 <div style="flex: 1;"><div style="font-weight: 500; color: var(--text-primary);">Inspección de Bomberos</div><div style="font-size: 13px; color: var(--text-secondary);">Vence: 15 de Marzo, 2026</div></div>
-                                <div style="font-weight: 600; color: var(--red-600);">31 días</div>
+                                <div style="font-weight: 600; color: var(--text-primary);">31 días</div>
                                 <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Marcado como completado', 'success')">Completar</button>
                             </div>
                             <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
-                                <div style="width: 10px; height: 10px; background: var(--amber-500); border-radius: 50%; flex-shrink: 0;"></div>
+                                <div style="width: 10px; height: 10px; background: var(--text-muted); border-radius: 50%; flex-shrink: 0;"></div>
                                 <div style="flex: 1;"><div style="font-weight: 500; color: var(--text-primary);">Fumigación Trimestral</div><div style="font-size: 13px; color: var(--text-secondary);">Vence: 1 de Abril, 2026</div></div>
-                                <div style="font-weight: 600; color: var(--amber-600);">48 días</div>
+                                <div style="font-weight: 600; color: var(--text-primary);">48 días</div>
                                 <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Marcado como completado', 'success')">Completar</button>
                             </div>
                             <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
-                                <div style="width: 10px; height: 10px; background: var(--emerald-500); border-radius: 50%; flex-shrink: 0;"></div>
+                                <div style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%; flex-shrink: 0;"></div>
                                 <div style="flex: 1;"><div style="font-weight: 500; color: var(--text-primary);">Certificación de Elevadores</div><div style="font-size: 13px; color: var(--text-secondary);">Vence: 1 de Junio, 2026</div></div>
-                                <div style="font-weight: 500; color: var(--emerald-600);">109 días</div>
+                                <div style="font-weight: 500; color: var(--text-primary);">109 días</div>
                                 <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Marcado como completado', 'success')">Completar</button>
                             </div>
                             <div style="display: flex; align-items: center; padding: 16px 24px; gap: 16px;">
-                                <div style="width: 10px; height: 10px; background: var(--emerald-500); border-radius: 50%; flex-shrink: 0;"></div>
+                                <div style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%; flex-shrink: 0;"></div>
                                 <div style="flex: 1;"><div style="font-weight: 500; color: var(--text-primary);">Mantenimiento de Cisterna</div><div style="font-size: 13px; color: var(--text-secondary);">Vence: 15 de Julio, 2026</div></div>
-                                <div style="font-weight: 500; color: var(--emerald-600);">153 días</div>
+                                <div style="font-weight: 500; color: var(--text-primary);">153 días</div>
                                 <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="showToast('Marcado como completado', 'success')">Completar</button>
                             </div>
                         </div>
@@ -2288,7 +2288,7 @@
                                     <div style="margin-bottom: 16px;">
                                         <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Equipo</div>
                                         <div style="font-size: 15px; font-weight: 600; color: var(--text-primary);">HVAC Piso 12 - Unidad 12-A</div>
-                                        <div style="font-size: 13px; color: var(--emerald-600);">✓ Identificado automáticamente</div>
+                                        <div style="font-size: 13px; color: var(--text-primary);">✓ Identificado automáticamente</div>
                                     </div>
                                     <div style="margin-bottom: 16px;">
                                         <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Ubicación</div>
@@ -2352,11 +2352,11 @@
                             <div style="font-size: 13px; color: var(--text-secondary);">Activos etiquetados</div>
                         </div>
                         <div>
-                            <div style="font-size: 32px; font-weight: 700; color: var(--emerald-600);">89%</div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--text-primary);">89%</div>
                             <div style="font-size: 13px; color: var(--text-secondary);">Tickets con activo identificado</div>
                         </div>
                         <div>
-                            <div style="font-size: 32px; font-weight: 700; color: var(--amber-600);">-40%</div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--text-primary);">-40%</div>
                             <div style="font-size: 13px; color: var(--text-secondary);">Tickets mal enrutados</div>
                         </div>
                     </div>
@@ -2514,7 +2514,7 @@
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Filtro HVAC 20x25x1</div><div style="font-size: 12px; color: var(--text-muted);">SKU: HVAC-F-2025</div></td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
-                                        <td style="padding: 16px 24px; font-weight: 600; color: var(--red-600);">3</td>
+                                        <td style="padding: 16px 24px; font-weight: 600; color: var(--text-primary);">3</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">10</td>
                                         <td style="padding: 16px 24px;">$185</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--red-500); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Stock Bajo</span></td>
@@ -2523,7 +2523,7 @@
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Foco LED 60W</div><div style="font-size: 12px; color: var(--text-muted);">SKU: ELEC-LED-60</div></td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
-                                        <td style="padding: 16px 24px; font-weight: 600; color: var(--amber-600);">12</td>
+                                        <td style="padding: 16px 24px; font-weight: 600; color: var(--text-primary);">12</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">25</td>
                                         <td style="padding: 16px 24px;">$45</td>
                                         <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Bajo</span></td>
@@ -2603,7 +2603,7 @@
                                 <div class="vendor-name">Elevadores Otis</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Especialista en elevadores · 12 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.8</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.8</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
                                 </div>
                             </div>
@@ -2618,7 +2618,7 @@
                                 <div class="vendor-name">Elevadores Schindler</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Especialista en elevadores · 8 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.6</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.6</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>4h</strong></span>
                                 </div>
                             </div>
@@ -2633,7 +2633,7 @@
                                 <div class="vendor-name">HVAC Solutions MX</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Aire acondicionado y ventilación · 15 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.9</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.9</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>3h</strong></span>
                                 </div>
                             </div>
@@ -2648,7 +2648,7 @@
                                 <div class="vendor-name">Plomería Express</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Plomería comercial e industrial · 21 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.5</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.5</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>1h</strong></span>
                                 </div>
                             </div>
@@ -2663,7 +2663,7 @@
                                 <div class="vendor-name">ElectroFix CDMX</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Instalaciones eléctricas · 9 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.7</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.7</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
                                 </div>
                             </div>
@@ -2678,7 +2678,7 @@
                                 <div class="vendor-name">Mantenimiento Integral</div>
                                 <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Servicios generales · 34 trabajos</div>
                                 <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
-                                    <span style="color: var(--text-secondary);"><strong style="color: var(--emerald-600);">4.4</strong> rating</span>
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.4</strong> rating</span>
                                     <span style="color: var(--text-secondary);">Respuesta: <strong>6h</strong></span>
                                 </div>
                             </div>
@@ -2782,17 +2782,17 @@
                         </div>
                         <div class="card" style="padding: 24px;">
                             <h3 class="report-section-title">Costos por Categoría</h3>
-                            <div class="category-bar"><div class="category-label">Elevadores</div><div class="category-track"><div class="category-fill" style="width:40%; background: var(--emerald-500)"></div></div><div class="category-value">$18.9k</div></div>
-                            <div class="category-bar"><div class="category-label">HVAC</div><div class="category-track"><div class="category-fill" style="width:30%; background: var(--emerald-500)"></div></div><div class="category-value">$14.2k</div></div>
-                            <div class="category-bar"><div class="category-label">Plomería</div><div class="category-track"><div class="category-fill" style="width:15%; background: var(--emerald-500)"></div></div><div class="category-value">$7.1k</div></div>
-                            <div class="category-bar"><div class="category-label">Electricidad</div><div class="category-track"><div class="category-fill" style="width:10%; background: var(--emerald-500)"></div></div><div class="category-value">$4.7k</div></div>
-                            <div class="category-bar"><div class="category-label">Otros</div><div class="category-track"><div class="category-fill" style="width:5%; background: var(--emerald-500)"></div></div><div class="category-value">$2.3k</div></div>
+                            <div class="category-bar"><div class="category-label">Elevadores</div><div class="category-track"><div class="category-fill" style="width:40%; background: var(--text-secondary)"></div></div><div class="category-value">$18.9k</div></div>
+                            <div class="category-bar"><div class="category-label">HVAC</div><div class="category-track"><div class="category-fill" style="width:30%; background: var(--text-secondary)"></div></div><div class="category-value">$14.2k</div></div>
+                            <div class="category-bar"><div class="category-label">Plomería</div><div class="category-track"><div class="category-fill" style="width:15%; background: var(--text-secondary)"></div></div><div class="category-value">$7.1k</div></div>
+                            <div class="category-bar"><div class="category-label">Electricidad</div><div class="category-track"><div class="category-fill" style="width:10%; background: var(--text-secondary)"></div></div><div class="category-value">$4.7k</div></div>
+                            <div class="category-bar"><div class="category-label">Otros</div><div class="category-track"><div class="category-fill" style="width:5%; background: var(--text-secondary)"></div></div><div class="category-value">$2.3k</div></div>
                         </div>
                         <div class="card" style="padding: 24px;">
                             <h3 class="report-section-title">Pisos con Mayor Incidencia</h3>
                             <div class="category-bar"><div class="category-label">Piso 12</div><div class="category-track"><div class="category-fill" style="width:45%; background: var(--red-500)"></div></div><div class="category-value">23</div></div>
-                            <div class="category-bar"><div class="category-label">Piso 8</div><div class="category-track"><div class="category-fill" style="width:35%; background: var(--amber-500)"></div></div><div class="category-value">18</div></div>
-                            <div class="category-bar"><div class="category-label">Piso 15</div><div class="category-track"><div class="category-fill" style="width:30%; background: var(--amber-500)"></div></div><div class="category-value">15</div></div>
+                            <div class="category-bar"><div class="category-label">Piso 8</div><div class="category-track"><div class="category-fill" style="width:35%; background: var(--text-muted)"></div></div><div class="category-value">18</div></div>
+                            <div class="category-bar"><div class="category-label">Piso 15</div><div class="category-track"><div class="category-fill" style="width:30%; background: var(--text-muted)"></div></div><div class="category-value">15</div></div>
                             <div class="category-bar"><div class="category-label">Piso 3</div><div class="category-track"><div class="category-fill" style="width:25%; background: var(--indigo-500)"></div></div><div class="category-value">13</div></div>
                             <div class="category-bar"><div class="category-label">Piso 20</div><div class="category-track"><div class="category-fill" style="width:20%; background: var(--indigo-500)"></div></div><div class="category-value">10</div></div>
                         </div>
@@ -2844,8 +2844,8 @@
                                 </div>
                             </div>
                             <div class="config-card-body">
-                                <div class="config-row"><span class="config-label">Urgente</span><span class="config-value" style="color: var(--red-600); font-weight: 600;">1 hora</span></div>
-                                <div class="config-row"><span class="config-label">Alta</span><span class="config-value" style="color: var(--amber-600); font-weight: 600;">4 horas</span></div>
+                                <div class="config-row"><span class="config-label">Urgente</span><span class="config-value" style="color: var(--text-primary); font-weight: 600;">1 hora</span></div>
+                                <div class="config-row"><span class="config-label">Alta</span><span class="config-value" style="color: var(--text-primary); font-weight: 600;">4 horas</span></div>
                                 <div class="config-row"><span class="config-label">Normal</span><span class="config-value">24 horas</span></div>
                                 <div class="config-row"><span class="config-label">Baja</span><span class="config-value">72 horas</span></div>
                             </div>
@@ -2860,8 +2860,8 @@
                                 </div>
                             </div>
                             <div class="config-card-body">
-                                <div class="config-row"><span class="config-label">WhatsApp Business</span><span class="config-value" style="color: var(--emerald-600); display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background: var(--emerald-500); border-radius: 50%;"></span>Conectado</span></div>
-                                <div class="config-row"><span class="config-label">Google Calendar</span><span class="config-value" style="color: var(--emerald-600); display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background: var(--emerald-500); border-radius: 50%;"></span>Conectado</span></div>
+                                <div class="config-row"><span class="config-label">WhatsApp Business</span><span class="config-value" style="color: var(--text-primary); display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background: var(--text-secondary); border-radius: 50%;"></span>Conectado</span></div>
+                                <div class="config-row"><span class="config-label">Google Calendar</span><span class="config-value" style="color: var(--text-primary); display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background: var(--text-secondary); border-radius: 50%;"></span>Conectado</span></div>
                                 <div class="config-row"><span class="config-label">SAP (ERP)</span><span class="config-value" style="color: var(--text-muted);">No configurado</span></div>
                                 <div class="config-row"><span class="config-label">Sistema de Acceso</span><span class="config-value" style="color: var(--text-muted);">No configurado</span></div>
                             </div>
