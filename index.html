@@ -126,6 +126,16 @@
         .timeline__content { flex: 1; }
         .timeline__title { font-size: 14px; font-weight: 500; color: var(--text-primary); }
         .timeline__meta { font-size: 12px; color: var(--text-secondary); }
+        
+        /* Tabs/Filters (unified) */
+        .tabs { display: flex; gap: 4px; background: var(--bg-secondary); padding: 4px; border-radius: var(--radius-md); width: fit-content; }
+        .tabs--outline { background: transparent; padding: 0; gap: 8px; }
+        .tabs__item { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; }
+        .tabs__item:hover { color: var(--text-primary); }
+        .tabs__item.active { background: var(--bg-primary); color: var(--indigo-600); box-shadow: var(--shadow-sm); }
+        .tabs--outline .tabs__item { border: 1px solid var(--border); padding: 8px 14px; font-size: 13px; border-radius: 9999px; }
+        .tabs--outline .tabs__item:hover { border-color: var(--text-muted); }
+        .tabs--outline .tabs__item.active { background: var(--indigo-600); color: #fff; border-color: var(--indigo-600); }
 
         /* ==================== SIDEBAR ==================== */
         .sidebar {
