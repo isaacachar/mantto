@@ -2959,7 +2959,7 @@
                 document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
                 document.getElementById(view).classList.add('active');
                 document.getElementById('pageTitle').textContent = pageTitles[view];
-                document.getElementById('newOrderBtn').style.display = showNewOrderViews.includes(view) ? 'flex' : 'none';
+                document.getElementById('newOrderBtn').style.display = showNewOrderViews.includes(view) ? 'inline-flex' : 'none';
             });
         });
 
