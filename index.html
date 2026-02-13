@@ -1580,10 +1580,54 @@
             max-width: 280px;
             text-align: right;
         }
+        
+        /* ==================== MOBILE RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .dashboard-grid { grid-template-columns: 1fr; }
+            .predictions-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .config-grid { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar { 
+                position: fixed; left: -280px; top: 0; bottom: 0; z-index: 1000;
+                transition: left 0.3s ease;
+            }
+            .sidebar.open { left: 0; }
+            .sidebar-overlay {
+                display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+            .sidebar-overlay.active { display: block; }
+            .main { margin-left: 0; }
+            .topbar { padding: 16px; }
+            .mobile-menu-btn { 
+                display: flex; align-items: center; justify-content: center;
+                width: 40px; height: 40px; background: none; border: none;
+                color: var(--text-primary); cursor: pointer; margin-right: 12px;
+            }
+            .content { padding: 16px; }
+            .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .stat-card { padding: 16px; }
+            .stat-value { font-size: 24px; }
+            .card-header, .card-body { padding: 16px; }
+            .floor-detail-panel { position: fixed; left: 0; right: 0; bottom: 0; top: auto; height: 60vh; border-radius: 16px 16px 0 0; }
+            .tracking-grid { grid-template-columns: 1fr; }
+            .cost-comparison { grid-template-columns: 1fr; }
+            .roi-banner { flex-direction: column; text-align: center; gap: 16px; }
+            .roi-banner-detail { text-align: center; max-width: 100%; }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
     </style>
 </head>
 <body>
     <div class="app">
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -1678,6 +1722,9 @@
         <main class="main">
             <div class="topbar">
                 <div class="topbar-left">
+                    <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
                     <span class="page-title" id="pageTitle">Dashboard</span>
                 </div>
                 <div class="topbar-right">
@@ -3031,6 +3078,11 @@
                 document.getElementById(view).classList.add('active');
                 document.getElementById('pageTitle').textContent = pageTitles[view];
                 document.getElementById('newOrderBtn').style.display = showNewOrderViews.includes(view) ? 'inline-flex' : 'none';
+                // Close sidebar on mobile
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.sidebar').classList.remove('open');
+                    document.querySelector('.sidebar-overlay').classList.remove('active');
+                }
             });
         });
 
@@ -3042,6 +3094,10 @@
             });
         });
 
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('active');
+        }
         function openModal() { document.getElementById('modalOverlay').classList.add('active'); }
         function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
 
