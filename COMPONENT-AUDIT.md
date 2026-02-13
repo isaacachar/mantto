@@ -157,25 +157,42 @@ Only addition needed: `.btn--sm` for smaller contexts.
 
 ---
 
-## 🚦 PRIORITY ACTIONS
+## 🚦 COMPLETED REFACTORING
 
-### Phase 1: Quick Wins (30 min)
-1. Unify badge/status colors into single system
-2. Unify colored boxes (cost/savings)
-3. Create grid utility classes
+### ✅ Phase 1: Quick Wins (DONE)
+1. ✅ Unified badge system (`.badge--urgent/warning/success/info`)
+2. ✅ Unified colored boxes (`.highlight-box--success/danger/warning/info`)
+3. ✅ Grid utility classes (`.grid--2/3/4`)
+4. ✅ Solid colors applied to all prominent boxes/banners
 
-### Phase 2: Medium Effort (1-2 hrs)
-4. Consolidate card variants
-5. Unify avatar sizes
-6. Standardize section headers
+### ✅ Phase 2: Consolidation (DONE)
+5. ✅ Card variants consolidated (7 types → 1 base + overrides, -22 lines)
+6. ✅ Avatar sizes unified (`.avatar--xs/sm/md/lg/xl`)
+7. ✅ Section headers standardized (`.section-header`, `.section-title`)
+8. ✅ Timeline utility classes (`.timeline__item/dot/content/title/meta`)
+9. ✅ Tabs/filters unified (`.tabs`, `.tabs--outline`, `.tabs__item`)
 
-### Phase 3: Deeper Refactor (2-3 hrs)
-7. Consolidate timeline patterns
-8. Create component documentation
+### ✅ Phase 3: Utilities (DONE)
+10. ✅ Text utilities (`.text-xs` to `.text-3xl`, `.font-medium/semibold/bold`)
+11. ✅ Spacing utilities (`.mb-0` to `.mb-6`, `.gap-1` to `.gap-4`)
+12. ✅ Flex utilities (`.flex`, `.flex-col`, `.items-center`, `.justify-between`)
 
 ---
 
-## 🎯 Target: Reduce CSS by ~40%
+## 📊 Results
 
-Current estimate: ~1500 lines of CSS
-Target: ~900 lines with reusable utilities
+| Metric | Before | After |
+|--------|--------|-------|
+| Card definitions | 7 separate | 1 base + minimal overrides |
+| Utility classes | 0 | 50+ reusable |
+| Color consistency | Mixed (gradients + pastel) | Solid colors for prominent elements |
+
+**6 commits** from checkpoint-pre-consolidation
+
+---
+
+## 🔮 Future Opportunities (nice-to-have)
+
+- Apply new utility classes to HTML (reduce inline styles)
+- Remove old unused class definitions after full migration
+- Create separate `utilities.css` file for reuse across projects
