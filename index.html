@@ -304,10 +304,7 @@
             display: flex; align-items: center; justify-content: center;
         }
         .stat-icon svg { width: 20px; height: 20px; }
-        .stat-icon.indigo { background: var(--indigo-50); color: var(--indigo-600); }
-        .stat-icon.emerald { background: var(--emerald-50); color: var(--emerald-600); }
-        .stat-icon.amber { background: var(--amber-50); color: var(--amber-600); }
-        .stat-icon.red { background: var(--red-50); color: var(--red-600); }
+        .stat-icon.indigo, .stat-icon.emerald, .stat-icon.amber, .stat-icon.red { background: var(--bg-tertiary); color: var(--text-secondary); }
 
         .stat-value { font-size: 32px; font-weight: 700; color: var(--text-primary); letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
         .stat-trend { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; }
@@ -467,10 +464,10 @@
             display: inline-flex; align-items: center; gap: 6px;
             padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
         }
-        .status-badge.urgent { background: var(--red-50); color: var(--red-600); }
-        .status-badge.pending { background: var(--amber-50); color: var(--amber-600); }
-        .status-badge.in-progress { background: var(--indigo-50); color: var(--indigo-600); }
-        .status-badge.resolved { background: var(--emerald-50); color: var(--emerald-600); }
+        .status-badge.urgent { background: var(--red-500); color: #fff; }
+        .status-badge.pending { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .status-badge.in-progress { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .status-badge.resolved { background: var(--bg-tertiary); color: var(--text-secondary); }
 
         .status-dot { width: 8px; height: 8px; border-radius: 50%; }
         .status-badge.urgent .status-dot { background: var(--red-500); }
@@ -616,7 +613,7 @@
         .tracking-tech-role { font-size: 14px; color: var(--text-secondary); }
         .tracking-eta {
             margin-left: auto; padding: 8px 16px;
-            background: var(--emerald-50); color: var(--emerald-600);
+            background: var(--bg-tertiary); color: var(--text-secondary);
             border-radius: var(--radius-md); font-weight: 600;
         }
 
@@ -777,8 +774,8 @@
             width: 48px; height: 48px; border-radius: var(--radius-md);
             display: flex; align-items: center; justify-content: center;
         }
-        .prediction-icon.warning { background: var(--amber-50); color: var(--amber-600); }
-        .prediction-icon.critical { background: var(--red-50); color: var(--red-600); }
+        .prediction-icon.warning { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .prediction-icon.critical { background: var(--red-500); color: #fff; }
         .prediction-icon svg { width: 24px; height: 24px; }
 
         .prediction-title { font-weight: 600; color: var(--text-primary); }
@@ -788,8 +785,8 @@
             margin-left: auto; padding: 6px 12px; border-radius: 20px;
             font-size: 13px; font-weight: 700;
         }
-        .prediction-badge.high { background: var(--red-50); color: var(--red-600); }
-        .prediction-badge.medium { background: var(--amber-50); color: var(--amber-600); }
+        .prediction-badge.high { background: var(--red-500); color: #fff; }
+        .prediction-badge.medium { background: var(--bg-tertiary); color: var(--text-secondary); }
 
         .prediction-body { padding: 24px; }
 
@@ -828,8 +825,8 @@
             border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
         }
         .compliance-stat-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .compliance-stat-icon.urgent { background: var(--red-50); color: var(--red-600); }
-        .compliance-stat-icon.ok { background: var(--emerald-50); color: var(--emerald-600); }
+        .compliance-stat-icon.urgent { background: var(--red-500); color: #fff; }
+        .compliance-stat-icon.ok { background: var(--bg-tertiary); color: var(--text-secondary); }
         .compliance-stat-value { font-size: 24px; font-weight: 700; }
         .compliance-stat-label { font-size: 12px; color: var(--text-secondary); }
 
@@ -861,9 +858,9 @@
             padding: 6px 12px; border-radius: var(--radius-sm);
             font-size: 13px; font-weight: 600; white-space: nowrap;
         }
-        .timeline-days.urgent { background: var(--red-50); color: var(--red-600); }
-        .timeline-days.warning { background: var(--amber-50); color: var(--amber-600); }
-        .timeline-days.ok { background: var(--emerald-50); color: var(--emerald-600); }
+        .timeline-days.urgent { background: var(--red-500); color: #fff; }
+        .timeline-days.warning { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .timeline-days.ok { background: var(--bg-tertiary); color: var(--text-secondary); }
 
         .compliance-banner {
             margin-top: 24px; padding: 20px 24px;
@@ -944,7 +941,7 @@
             cursor: pointer; transition: all 0.15s;
         }
         .vendor-card:hover { border-color: var(--indigo-300); box-shadow: var(--shadow-md); }
-        .vendor-card.selected { border-color: var(--indigo-500); background: var(--indigo-50); }
+        .vendor-card.selected { border-color: var(--indigo-600); background: var(--bg-secondary); }
 
         .vendor-logo {
             width: 48px; height: 48px; border-radius: var(--radius-md);
@@ -977,7 +974,7 @@
         .quotes-table tr:hover td { background: var(--bg-secondary); }
 
         .quote-vendor { display: flex; align-items: center; gap: 12px; }
-        .quote-best { background: var(--emerald-50); color: var(--emerald-600); padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .quote-best { background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
 
         /* ==================== MODAL ==================== */
         .modal-overlay {
@@ -1133,9 +1130,9 @@
             flex-shrink: 0;
         }
 
-        .toast.success .toast-icon { background: var(--emerald-50); color: var(--emerald-600); }
-        .toast.error .toast-icon { background: var(--red-50); color: var(--red-600); }
-        .toast.warning .toast-icon { background: var(--amber-50); color: var(--amber-600); }
+        .toast.success .toast-icon { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .toast.error .toast-icon { background: var(--red-500); color: #fff; }
+        .toast.warning .toast-icon { background: var(--bg-tertiary); color: var(--text-secondary); }
 
         .toast-icon svg { width: 14px; height: 14px; }
 
@@ -1801,23 +1798,23 @@
                             <div class="card-body" style="padding: 16px 24px;">
                                 <div class="activity-feed">
                                     <div class="activity-item">
-                                        <div class="activity-icon" style="background: var(--emerald-50); color: var(--emerald-600);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                                        <div class="activity-icon" style="background: var(--bg-tertiary); color: var(--text-secondary);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
                                         <div class="activity-content"><span class="activity-text"><strong>Miguel H.</strong> completó "Fuga en baño P8"</span><span class="activity-time">Hace 12 min</span></div>
                                     </div>
                                     <div class="activity-item">
-                                        <div class="activity-icon" style="background: var(--indigo-50); color: var(--indigo-600);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+                                        <div class="activity-icon" style="background: var(--bg-tertiary); color: var(--text-secondary);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
                                         <div class="activity-content"><span class="activity-text"><strong>Ana G.</strong> asignada a ticket #845</span><span class="activity-time">Hace 25 min</span></div>
                                     </div>
                                     <div class="activity-item">
-                                        <div class="activity-icon" style="background: var(--red-50); color: var(--red-600);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+                                        <div class="activity-icon" style="background: var(--red-500); color: #fff;"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
                                         <div class="activity-content"><span class="activity-text">Nuevo ticket urgente: <strong>HVAC P12</strong></span><span class="activity-time">Hace 32 min</span></div>
                                     </div>
                                     <div class="activity-item">
-                                        <div class="activity-icon" style="background: var(--amber-50); color: var(--amber-600);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                                        <div class="activity-icon" style="background: var(--bg-tertiary); color: var(--text-secondary);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                                         <div class="activity-content"><span class="activity-text"><strong>Roberto L.</strong> en camino a P22</span><span class="activity-time">Hace 45 min</span></div>
                                     </div>
                                     <div class="activity-item">
-                                        <div class="activity-icon" style="background: var(--emerald-50); color: var(--emerald-600);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                                        <div class="activity-icon" style="background: var(--bg-tertiary); color: var(--text-secondary);"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
                                         <div class="activity-content"><span class="activity-text"><strong>Carmen R.</strong> completó "Luz fundida P15"</span><span class="activity-time">Hace 1 hora</span></div>
                                     </div>
                                 </div>
@@ -2387,49 +2384,49 @@
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">HVAC Unidad 12-A</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Piso 12, Zona Norte</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--indigo-50); color: var(--indigo-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">15 Ene 2026</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Elevador A - Motor</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Lobby Principal</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Elevadores</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Elevadores</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">8 Feb 2026</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Bomba de Agua #2</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Cuarto de Máquinas</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--blue-50); color: var(--blue-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Plomería</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Plomería</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">22 Dic 2025</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Mantenimiento</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Mantenimiento</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Generador de Emergencia</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Sótano 2</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--red-500); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">1 Feb 2026</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px; font-weight: 500;">Tablero Eléctrico P15</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Piso 15, Cuarto Técnico</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--red-500); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">10 Ene 2026</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 16px 24px; font-weight: 500;">Sistema Contra Incendios</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Todos los pisos</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Seguridad</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--red-500); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Seguridad</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">5 Feb 2026</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Operativo</span></td>
                                         <td style="padding: 16px 24px; text-align: center;"><button style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px; color: var(--text-secondary);" onclick="showToast('Código QR generado', 'success')">Ver QR</button></td>
                                     </tr>
                                 </tbody>
@@ -2514,56 +2511,56 @@
                                 <tbody>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Filtro HVAC 20x25x1</div><div style="font-size: 12px; color: var(--text-muted);">SKU: HVAC-F-2025</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--indigo-50); color: var(--indigo-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600; color: var(--red-600);">3</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">10</td>
                                         <td style="padding: 16px 24px;">$185</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--red-50); color: var(--red-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Stock Bajo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--red-500); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Stock Bajo</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén A-12</td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Foco LED 60W</div><div style="font-size: 12px; color: var(--text-muted);">SKU: ELEC-LED-60</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600; color: var(--amber-600);">12</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">25</td>
                                         <td style="padding: 16px 24px;">$45</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Bajo</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Bajo</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén B-03</td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Válvula de Bola 1/2"</div><div style="font-size: 12px; color: var(--text-muted);">SKU: PLMB-VB-05</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--blue-50); color: var(--blue-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Plomería</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Plomería</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600;">45</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">15</td>
                                         <td style="padding: 16px 24px;">$120</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén A-05</td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Gas Refrigerante R-410A</div><div style="font-size: 12px; color: var(--text-muted);">SKU: HVAC-GAS-410</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--indigo-50); color: var(--indigo-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">HVAC</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600;">8</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">5</td>
                                         <td style="padding: 16px 24px;">$850</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén C-01</td>
                                     </tr>
                                     <tr style="border-bottom: 1px solid var(--border-light);">
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Interruptor Termomagnético 20A</div><div style="font-size: 12px; color: var(--text-muted);">SKU: ELEC-ITM-20</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--amber-50); color: var(--amber-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Eléctrico</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600;">22</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">10</td>
                                         <td style="padding: 16px 24px;">$380</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén B-07</td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 16px 24px;"><div style="font-weight: 500;">Aceite para Elevador</div><div style="font-size: 12px; color: var(--text-muted);">SKU: ELEV-OIL-5L</div></td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--purple-50); color: var(--purple-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Elevadores</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">Elevadores</span></td>
                                         <td style="padding: 16px 24px; font-weight: 600;">15</td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">8</td>
                                         <td style="padding: 16px 24px;">$420</td>
-                                        <td style="padding: 16px 24px;"><span style="background: var(--emerald-50); color: var(--emerald-600); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
+                                        <td style="padding: 16px 24px;"><span style="background: var(--bg-tertiary); color: var(--text-secondary); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500;">OK</span></td>
                                         <td style="padding: 16px 24px; color: var(--text-secondary);">Almacén C-02</td>
                                     </tr>
                                 </tbody>
