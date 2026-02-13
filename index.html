@@ -1878,57 +1878,145 @@
 
                 <!-- WhatsApp AI -->
                 <section class="view" id="whatsapp">
-                    <div class="whatsapp-tagline">Tu equipo solo habla. <span>La IA crea el ticket.</span></div>
-                    <div class="whatsapp-demo">
-                        <div class="phone-mockup">
-                            <div class="phone-screen">
-                                <div class="phone-header">
-                                    <div class="phone-header-avatar"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;color:white"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-                                    <div><div class="phone-header-name">Mantto Bot</div><div class="phone-header-status">en línea</div></div>
-                                </div>
-                                <div class="chat-messages">
-                                    <div class="voice-message">
-                                        <div class="voice-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                                        <div class="voice-waves">
-                                            <div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div>
-                                            <div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div>
+                    <!-- Stats Header -->
+                    <div class="stats-row" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 24px;">
+                        <div class="stat-card">
+                            <div class="stat-header"><span class="stat-label">Tickets vía WhatsApp</span></div>
+                            <div class="stat-value">47</div>
+                            <span class="stat-trend positive">Este mes</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header"><span class="stat-label">Tiempo de Creación</span></div>
+                            <div class="stat-value">28s</div>
+                            <span class="stat-trend positive">Promedio</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header"><span class="stat-label">Precisión IA</span></div>
+                            <div class="stat-value">94%</div>
+                            <span class="stat-trend positive">Categorización correcta</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-header"><span class="stat-label">Usuarios Activos</span></div>
+                            <div class="stat-value">23</div>
+                            <span class="stat-trend positive">Inquilinos conectados</span>
+                        </div>
+                    </div>
+
+                    <!-- Two Column Layout -->
+                    <div style="display: grid; grid-template-columns: 320px 1fr; gap: 24px;">
+                        <!-- Left: Phone Demo -->
+                        <div>
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <div class="phone-header">
+                                        <div class="phone-header-avatar"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;color:white"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+                                        <div><div class="phone-header-name">Mantto Bot</div><div class="phone-header-status">en línea</div></div>
+                                    </div>
+                                    <div class="chat-messages">
+                                        <div class="voice-message">
+                                            <div class="voice-play"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                                            <div class="voice-waves">
+                                                <div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div>
+                                                <div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div>
+                                            </div>
+                                            <div class="voice-duration">0:04</div>
                                         </div>
-                                        <div class="voice-duration">0:04</div>
-                                    </div>
-                                    <div class="chat-bubble received">
-                                        <strong>Ticket #847 creado</strong><br><br>
-                                        📍 Piso 12, Oficina 1205<br>
-                                        🏷️ HVAC<br>
-                                        ⚡ Prioridad: Alta<br>
-                                        👤 Asignado: Miguel H.
-                                        <div class="chat-time">14:32 ✓✓</div>
+                                        <div class="chat-bubble received">
+                                            <strong>Ticket #847 creado</strong><br><br>
+                                            Piso 12, Oficina 1205<br>
+                                            HVAC · Prioridad Alta<br>
+                                            Asignado: Miguel H.
+                                            <div class="chat-time">14:32</div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div style="margin-top: 16px; text-align: center;">
+                                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Los inquilinos envían nota de voz → la IA crea el ticket</p>
+                                <button class="btn btn-secondary" onclick="showToast('Mensaje de prueba enviado', 'success')">Enviar Mensaje de Prueba</button>
                             </div>
                         </div>
-                        <div class="ai-process">
-                            <h3>Cómo funciona</h3>
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Nota de voz</h4>
-                                    <p>El inquilino envía: "El aire acondicionado del piso 12 no está enfriando"</p>
+
+                        <!-- Right: Activity Feed + Config -->
+                        <div>
+                            <!-- Recent Activity -->
+                            <div class="card" style="margin-bottom: 24px;">
+                                <div class="card-header">
+                                    <h3 class="card-title">Tickets Recientes vía WhatsApp</h3>
+                                    <span style="font-size: 12px; color: var(--text-muted);">Últimas 24 horas</span>
+                                </div>
+                                <div style="padding: 0;">
+                                    <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
+                                        <div style="width: 40px; height: 40px; background: var(--emerald-100); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" fill="none" stroke="var(--emerald-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 500; color: var(--text-primary);">"El aire no enfría en mi oficina"</div>
+                                            <div style="font-size: 13px; color: var(--text-secondary);">Piso 12 · HVAC · Creado en 24s</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; color: var(--text-primary);">#847</div>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Hace 32 min</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
+                                        <div style="width: 40px; height: 40px; background: var(--emerald-100); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" fill="none" stroke="var(--emerald-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 500; color: var(--text-primary);">"Hay una fuga de agua en el baño"</div>
+                                            <div style="font-size: 13px; color: var(--text-secondary);">Piso 8 · Plomería · Creado en 31s</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; color: var(--text-primary);">#846</div>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Hace 1 hora</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
+                                        <div style="width: 40px; height: 40px; background: var(--emerald-100); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" fill="none" stroke="var(--emerald-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 500; color: var(--text-primary);">"Las luces del pasillo están parpadeando"</div>
+                                            <div style="font-size: 13px; color: var(--text-secondary);">Piso 15 · Eléctrico · Creado en 19s</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; color: var(--text-primary);">#845</div>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Hace 2 horas</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; padding: 16px 24px; gap: 16px;">
+                                        <div style="width: 40px; height: 40px; background: var(--amber-100); border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" fill="none" stroke="var(--amber-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg></div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 500; color: var(--text-primary);">"Algo huele raro en la cocina"</div>
+                                            <div style="font-size: 13px; color: var(--amber-600);">Requirió confirmación manual</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 13px; color: var(--text-primary);">#844</div>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Hace 3 horas</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>IA Transcribe y Analiza</h4>
-                                    <p>Detecta categoría, ubicación y urgencia automáticamente</p>
-                                    <div class="step-result">HVAC → Piso 12 → Prioridad Alta</div>
+
+                            <!-- Configuration -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Configuración WhatsApp</h3>
                                 </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Ticket Creado y Asignado</h4>
-                                    <p>Se asigna al técnico disponible más cercano con las habilidades correctas</p>
-                                    <div class="step-result">Miguel Hernández notificado vía WhatsApp</div>
+                                <div class="card-body">
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Número conectado</div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">+52 55 1234 5678</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Estado</div>
+                                            <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; background: var(--emerald-500); border-radius: 50%;"></span><span style="font-weight: 500; color: var(--emerald-600);">Conectado</span></div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Horario activo</div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Lun-Vie, 7:00-22:00</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Auto-respuesta</div>
+                                            <div style="font-weight: 500; color: var(--text-primary);">Habilitada</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
