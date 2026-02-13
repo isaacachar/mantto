@@ -2621,7 +2621,7 @@
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
                         <div>
                             <h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin: 0;">Proveedores Verificados</h2>
-                            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 0;">6 proveedores activos · 23 trabajos completados este año</p>
+                            <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 0;">18 proveedores activos · 147 trabajos completados este año</p>
                         </div>
                         <button class="btn btn-primary" onclick="showToast('Solicitud de cotización enviada a 3 proveedores', 'success')">
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
@@ -2631,16 +2631,19 @@
 
                     <!-- Filter tabs -->
                     <div class="filters-bar" style="margin-bottom: 24px;">
-                        <button class="filter-btn active">Todos (6)</button>
-                        <button class="filter-btn">Elevadores (2)</button>
-                        <button class="filter-btn">HVAC (1)</button>
-                        <button class="filter-btn">Plomería (1)</button>
-                        <button class="filter-btn">Eléctrico (1)</button>
-                        <button class="filter-btn">General (1)</button>
+                        <button class="filter-btn active">Todos (18)</button>
+                        <button class="filter-btn">Elevadores (3)</button>
+                        <button class="filter-btn">HVAC (3)</button>
+                        <button class="filter-btn">Plomería (2)</button>
+                        <button class="filter-btn">Eléctrico (3)</button>
+                        <button class="filter-btn">Seguridad (2)</button>
+                        <button class="filter-btn">Limpieza (2)</button>
+                        <button class="filter-btn">General (3)</button>
                     </div>
 
                     <!-- Vendor cards -->
                     <div class="vendors-grid">
+                        <!-- Elevadores -->
                         <div class="vendor-card">
                             <div class="vendor-logo">EO</div>
                             <div style="flex: 1;">
@@ -2672,6 +2675,22 @@
                             </div>
                         </div>
                         <div class="vendor-card">
+                            <div class="vendor-logo">TK</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">ThyssenKrupp México</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Elevadores y escaleras eléctricas · 5 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.7</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>3h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$22-38k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- HVAC -->
+                        <div class="vendor-card">
                             <div class="vendor-logo">HS</div>
                             <div style="flex: 1;">
                                 <div class="vendor-name">HVAC Solutions MX</div>
@@ -2686,6 +2705,37 @@
                                 <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
                             </div>
                         </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">CA</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Carrier México</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Sistemas de climatización · 11 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.7</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>4h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$8-25k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">TR</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Trane CDMX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Chillers y manejadoras · 7 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.8</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$12-45k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- Plomería -->
                         <div class="vendor-card">
                             <div class="vendor-logo">PE</div>
                             <div style="flex: 1;">
@@ -2702,6 +2752,22 @@
                             </div>
                         </div>
                         <div class="vendor-card">
+                            <div class="vendor-logo">HT</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">HidroTec Profesional</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Bombas y sistemas hidráulicos · 9 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.6</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$5-18k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- Eléctrico -->
+                        <div class="vendor-card">
                             <div class="vendor-logo">EF</div>
                             <div style="flex: 1;">
                                 <div class="vendor-name">ElectroFix CDMX</div>
@@ -2717,6 +2783,99 @@
                             </div>
                         </div>
                         <div class="vendor-card">
+                            <div class="vendor-logo">SE</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Schneider Electric MX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Subestaciones y tableros · 4 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.9</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>6h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$15-80k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">IG</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Iluminación Global</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">LED y sistemas de iluminación · 6 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.4</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>1h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$2-12k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- Seguridad -->
+                        <div class="vendor-card">
+                            <div class="vendor-logo">PS</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">ProSeguridad MX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">CCTV y control de acceso · 8 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.6</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>2h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$4-20k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">FC</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">FireControl Systems</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Sistemas contra incendio · 5 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.8</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>1h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$6-25k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- Limpieza -->
+                        <div class="vendor-card">
+                            <div class="vendor-logo">LC</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">LimpiezaCorp</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Limpieza profunda y sanitización · 14 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.5</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>4h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$3-8k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">CF</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">CristalFachadas</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Limpieza de fachadas y vidrios · 3 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.7</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>24h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$15-40k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <!-- General -->
+                        <div class="vendor-card">
                             <div class="vendor-logo">MI</div>
                             <div style="flex: 1;">
                                 <div class="vendor-name">Mantenimiento Integral</div>
@@ -2728,6 +2887,36 @@
                             </div>
                             <div style="text-align: right;">
                                 <div class="vendor-price">$1-5k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">CP</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Carpintería Profesional</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Puertas, closets y mobiliario · 7 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.3</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>8h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$2-15k</div>
+                                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
+                            </div>
+                        </div>
+                        <div class="vendor-card">
+                            <div class="vendor-logo">PA</div>
+                            <div style="flex: 1;">
+                                <div class="vendor-name">Pinturas y Acabados MX</div>
+                                <div style="font-size: 12px; color: var(--text-secondary); margin: 4px 0;">Pintura y resanes · 10 trabajos</div>
+                                <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 13px;">
+                                    <span style="color: var(--text-secondary);"><strong style="color: var(--text-primary);">4.5</strong> rating</span>
+                                    <span style="color: var(--text-secondary);">Respuesta: <strong>12h</strong></span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="vendor-price">$3-20k</div>
                                 <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">por trabajo</div>
                             </div>
                         </div>
