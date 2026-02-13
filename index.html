@@ -278,11 +278,13 @@
 
         .incident-card {
             padding: 14px 16px; background: var(--bg-secondary);
-            border-radius: var(--radius-md); border-left: 4px solid; margin-bottom: 10px;
+            border-radius: var(--radius-md); margin-bottom: 10px; position: relative;
         }
-        .incident-card.urgent { border-left-color: var(--red-500); }
-        .incident-card.pending { border-left-color: var(--amber-500); }
-        .incident-card.resolved { border-left-color: var(--emerald-500); }
+        .incident-card::before { content: ''; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; }
+        .incident-card.urgent::before { background: var(--red-500); }
+        .incident-card.pending::before { background: var(--amber-500); }
+        .incident-card.resolved::before { background: var(--emerald-500); }
+        .incident-card { padding-left: 36px; }
 
         .incident-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
         .incident-status { font-size: 12px; color: var(--text-secondary); }
