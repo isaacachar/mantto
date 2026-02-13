@@ -67,6 +67,54 @@
 
         .app { display: flex; height: 100vh; overflow: hidden; }
 
+        /* ==================== UNIFIED UTILITIES ==================== */
+        
+        /* Grids */
+        .grid { display: grid; gap: 24px; }
+        .grid--2 { grid-template-columns: repeat(2, 1fr); }
+        .grid--3 { grid-template-columns: repeat(3, 1fr); }
+        .grid--4 { grid-template-columns: repeat(4, 1fr); }
+        .grid--gap-sm { gap: 16px; }
+        .grid--gap-lg { gap: 32px; }
+        
+        /* Avatars */
+        .avatar { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .avatar--xs { width: 28px; height: 28px; }
+        .avatar--sm { width: 32px; height: 32px; }
+        .avatar--md { width: 40px; height: 40px; }
+        .avatar--lg { width: 48px; height: 48px; }
+        .avatar--xl { width: 64px; height: 64px; }
+        .avatar--online { position: relative; }
+        .avatar--online::after { content: ''; position: absolute; bottom: 2px; right: 2px; width: 10px; height: 10px; background: var(--emerald-500); border: 2px solid white; border-radius: 50%; }
+        
+        /* Badges */
+        .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 9999px; }
+        .badge--urgent { background: var(--red-500); color: #fff; }
+        .badge--warning { background: var(--amber-500); color: #fff; }
+        .badge--success { background: var(--emerald-500); color: #fff; }
+        .badge--info { background: var(--indigo-500); color: #fff; }
+        .badge--neutral { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .badge--outline { background: transparent; border: 1px solid currentColor; }
+        .badge--dot::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+        .badge--sm { padding: 2px 8px; font-size: 11px; }
+        .badge--lg { padding: 6px 14px; font-size: 13px; }
+        
+        /* Highlight Boxes (colored stat boxes) */
+        .highlight-box { padding: 16px; border-radius: var(--radius-md); text-align: center; }
+        .highlight-box--success { background: var(--emerald-500); color: #fff; }
+        .highlight-box--danger { background: var(--red-500); color: #fff; }
+        .highlight-box--warning { background: var(--amber-500); color: #fff; }
+        .highlight-box--info { background: var(--indigo-500); color: #fff; }
+        .highlight-box--muted { background: var(--bg-tertiary); color: var(--text-primary); }
+        .highlight-box__label { font-size: 12px; opacity: 0.85; margin-bottom: 4px; }
+        .highlight-box__value { font-size: 24px; font-weight: 700; }
+        .highlight-box__value--lg { font-size: 28px; font-weight: 800; }
+        
+        /* Section Headers */
+        .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .section-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .section-subtitle { font-size: 13px; color: var(--text-secondary); }
+
         /* ==================== SIDEBAR ==================== */
         .sidebar {
             width: 260px;
