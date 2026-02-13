@@ -2623,7 +2623,7 @@
                             <h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin: 0;">Proveedores Verificados</h2>
                             <p style="font-size: 14px; color: var(--text-secondary); margin: 4px 0 0;">18 proveedores activos · 147 trabajos completados este año</p>
                         </div>
-                        <button class="btn btn-primary" onclick="showToast('Solicitud de cotización enviada a 3 proveedores', 'success')">
+                        <button class="btn btn-primary" onclick="openRfqModal()">
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                             Solicitar Cotización
                         </button>
@@ -3262,6 +3262,90 @@
         </div>
     </div>
 
+    <!-- RFQ Modal -->
+    <div class="modal-overlay" id="rfqModalOverlay">
+        <div class="modal" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Nueva Solicitud de Cotización</h2>
+                <button class="modal-close" onclick="closeRfqModal()">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Título del trabajo</label>
+                    <input type="text" class="form-input" placeholder="Ej: Reparación de elevador, Cambio de filtros HVAC...">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Categoría</label>
+                        <select class="form-select">
+                            <option>Seleccionar...</option>
+                            <option>Elevadores</option>
+                            <option>HVAC</option>
+                            <option>Plomería</option>
+                            <option>Eléctrico</option>
+                            <option>Seguridad</option>
+                            <option>Limpieza</option>
+                            <option>General</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ubicación</label>
+                        <input type="text" class="form-input" placeholder="Ej: Piso 15, Azotea, Sótano...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Descripción del trabajo</label>
+                    <textarea class="form-textarea" rows="3" placeholder="Describe el trabajo requerido con el mayor detalle posible..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Fecha límite para cotizaciones</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Presupuesto estimado (opcional)</label>
+                        <input type="text" class="form-input" placeholder="Ej: $20,000 - $30,000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Seleccionar proveedores</label>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px;">
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> Elevadores Otis
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> Elevadores Schindler
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> ThyssenKrupp México
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> HVAC Solutions MX
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> Carrier México
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px;">
+                            <input type="checkbox" style="width: 16px; height: 16px;"> Trane CDMX
+                        </label>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 12px; color: var(--text-muted);">
+                        Los proveedores mostrados se filtran por categoría. <a href="#" style="color: var(--indigo-600);">Ver todos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeRfqModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="sendRfq()">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Enviar Solicitud
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
 
@@ -3298,6 +3382,20 @@
                 content.style.display = 'none';
                 arrow.style.transform = 'rotate(0deg)';
             }
+        }
+
+        // RFQ Modal
+        function openRfqModal() {
+            document.getElementById('rfqModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeRfqModal() {
+            document.getElementById('rfqModalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function sendRfq() {
+            closeRfqModal();
+            showToast('Solicitud enviada', 'Se notificará a los proveedores seleccionados por correo y WhatsApp', 'success');
         }
 
         // Toast notification system
