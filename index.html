@@ -308,8 +308,8 @@
 
         .stat-value { font-size: 32px; font-weight: 700; color: var(--text-primary); letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
         .stat-trend { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; }
-        .stat-trend.positive { color: var(--emerald-600); }
-        .stat-trend.negative { color: var(--red-600); }
+        .stat-trend.positive { color: var(--text-secondary); }
+        .stat-trend.negative { color: var(--red-500); }
 
         /* ==================== CARDS (Unified) ==================== */
         .card, .stat-card, .team-card, .tracking-card, .prediction-card, .asset-card, .vendor-card, .config-card {
@@ -345,17 +345,17 @@
             padding: 4px 0; cursor: pointer; border-radius: var(--radius-sm); transition: background 0.1s;
         }
         .floor-row:hover { background: var(--bg-secondary); }
-        .floor-row.selected { background: var(--amber-100); }
+        .floor-row.selected { background: var(--bg-tertiary); }
 
         .floor-label { width: 36px; font-size: 13px; font-weight: 600; color: var(--text-secondary); text-align: right; }
 
         .floor-bar-container { flex: 1; position: relative; }
         .floor-bar { height: 24px; border-radius: 4px; position: relative; }
         .floor-bar.level-0 { background: var(--bg-secondary); }
-        .floor-bar.level-1 { background: var(--emerald-100); }
-        .floor-bar.level-2 { background: var(--amber-100); }
+        .floor-bar.level-1 { background: var(--bg-tertiary); }
+        .floor-bar.level-2 { background: var(--bg-tertiary); }
         .floor-bar.level-3 { background: #fed7aa; }
-        .floor-bar.level-4 { background: var(--red-100); }
+        .floor-bar.level-4 { background: var(--bg-tertiary); }
 
         .floor-summary { display: flex; gap: 4px; width: 80px; justify-content: flex-end; align-items: center; }
         .summary-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -1079,8 +1079,8 @@
         .report-export { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--indigo-600); color: white; border: none; border-radius: var(--radius-md); font-size: 14px; font-weight: 500; cursor: pointer; }
         .report-export:hover { background: var(--indigo-700); }
         .stat-trend { display: flex; align-items: center; gap: 4px; font-size: 12px; margin-top: 4px; }
-        .stat-trend.up { color: var(--emerald-500); }
-        .stat-trend.down { color: var(--red-500); }
+        .stat-trend.up { color: var(--text-secondary); }
+        .stat-trend.down { color: var(--text-secondary); }
         .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
         .report-section-card { background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 24px; }
         .tech-table { width: 100%; border-collapse: collapse; }
@@ -1833,8 +1833,8 @@
                         </div>
                         <div class="card-body" style="padding: 0;">
                             <div style="display: flex; align-items: flex-start; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
-                                <div style="width: 36px; height: 36px; background: var(--red-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <svg width="18" height="18" fill="none" stroke="var(--red-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                <div style="width: 36px; height: 36px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                                 </div>
                                 <div style="flex: 1;">
                                     <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Piso 12 requiere atención</div>
@@ -1843,8 +1843,8 @@
                                 <a href="#" onclick="document.querySelector('[data-view=floormap]').click(); return false;" style="font-size: 13px; color: var(--indigo-600); text-decoration: none; white-space: nowrap;">Ver piso →</a>
                             </div>
                             <div style="display: flex; align-items: flex-start; padding: 16px 24px; border-bottom: 1px solid var(--border-light); gap: 16px;">
-                                <div style="width: 36px; height: 36px; background: var(--amber-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <svg width="18" height="18" fill="none" stroke="var(--amber-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <div style="width: 36px; height: 36px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 </div>
                                 <div style="flex: 1;">
                                     <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Filtros HVAC por agotarse</div>
@@ -1853,8 +1853,8 @@
                                 <a href="#" onclick="document.querySelector('[data-view=inventory]').click(); return false;" style="font-size: 13px; color: var(--indigo-600); text-decoration: none; white-space: nowrap;">Ver inventario →</a>
                             </div>
                             <div style="display: flex; align-items: flex-start; padding: 16px 24px; gap: 16px;">
-                                <div style="width: 36px; height: 36px; background: var(--emerald-100); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <svg width="18" height="18" fill="none" stroke="var(--emerald-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                <div style="width: 36px; height: 36px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                                 </div>
                                 <div style="flex: 1;">
                                     <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Miguel H. mejor rendimiento</div>
@@ -1871,8 +1871,8 @@
                     <!-- Stats -->
                     <div style="display: flex; gap: 16px; margin-bottom: 24px;">
                         <div style="flex: 1; padding: 16px 20px; background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: var(--radius-lg); display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 40px; height: 40px; background: var(--red-100); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                <svg width="20" height="20" fill="none" stroke="var(--red-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            <div style="width: 40px; height: 40px; background: var(--bg-tertiary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                             </div>
                             <div><div style="font-size: 24px; font-weight: 700; color: var(--text-primary);">5</div><div style="font-size: 13px; color: var(--text-secondary);">Pisos con urgentes</div></div>
                         </div>
@@ -1883,8 +1883,8 @@
                             <div><div style="font-size: 24px; font-weight: 700; color: var(--text-primary);">8</div><div style="font-size: 13px; color: var(--text-secondary);">Personal activo</div></div>
                         </div>
                         <div style="flex: 1; padding: 16px 20px; background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: var(--radius-lg); display: flex; align-items: center; gap: 12px;">
-                            <div style="width: 40px; height: 40px; background: var(--amber-100); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                <svg width="20" height="20" fill="none" stroke="var(--amber-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                            <div style="width: 40px; height: 40px; background: var(--bg-tertiary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
                             </div>
                             <div><div style="font-size: 24px; font-weight: 700; color: var(--text-primary);">12</div><div style="font-size: 13px; color: var(--text-secondary);">Tickets abiertos</div></div>
                         </div>
@@ -2266,7 +2266,7 @@
                         <div class="card" style="text-align: center; padding: 32px;">
                             <div style="font-size: 12px; font-weight: 600; color: var(--indigo-600); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Paso 3</div>
                             <div style="width: 80px; height: 80px; background: var(--emerald-50); border-radius: 16px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
-                                <svg width="40" height="40" fill="none" stroke="var(--emerald-600)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <svg width="40" height="40" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Ticket creado</div>
                             <div style="font-size: 13px; color: var(--text-secondary);">Equipo ya identificado</div>
@@ -2338,7 +2338,7 @@
                                     </div>
                                 </div>
                                 
-                                <div style="margin-top: 20px; padding: 12px 16px; background: var(--amber-50); border-radius: var(--radius-md); font-size: 13px; color: var(--amber-700);">
+                                <div style="margin-top: 20px; padding: 12px 16px; background: var(--amber-50); border-radius: var(--radius-md); font-size: 13px; color: var(--text-secondary);">
                                     <strong>Nota:</strong> Último reporte de "no enfría" fue hace 3 meses — revisar compresor
                                 </div>
                             </div>
@@ -2477,10 +2477,10 @@
 
                     <!-- Low Stock Alert -->
                     <div style="padding: 16px 20px; background: var(--amber-50); border: 1px solid #fcd34d; border-radius: var(--radius-lg); margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
-                        <svg width="24" height="24" fill="none" stroke="var(--amber-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        <svg width="24" height="24" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                         <div style="flex: 1;">
                             <div style="font-weight: 600; color: var(--amber-800);">8 partes con stock bajo</div>
-                            <div style="font-size: 13px; color: var(--amber-700);">Filtros HVAC, Focos LED, y 6 más necesitan reorden</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Filtros HVAC, Focos LED, y 6 más necesitan reorden</div>
                         </div>
                         <button class="btn btn-secondary" style="background: white;" onclick="showToast('Mostrando 8 partes con stock bajo', 'success')">Ver Todas</button>
                     </div>
@@ -2822,8 +2822,8 @@
                         <div class="config-card">
                             <div class="config-card-header">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 32px; height: 32px; background: var(--amber-100); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <svg width="18" height="18" fill="none" stroke="var(--amber-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                    <div style="width: 32px; height: 32px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
                                     </div>
                                     <h3 class="config-card-title">Notificaciones</h3>
                                 </div>
@@ -2837,8 +2837,8 @@
                         <div class="config-card">
                             <div class="config-card-header">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 32px; height: 32px; background: var(--red-100); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <svg width="18" height="18" fill="none" stroke="var(--red-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    <div style="width: 32px; height: 32px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                     </div>
                                     <h3 class="config-card-title">SLAs por Prioridad</h3>
                                 </div>
@@ -2853,8 +2853,8 @@
                         <div class="config-card">
                             <div class="config-card-header">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 32px; height: 32px; background: var(--emerald-100); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                        <svg width="18" height="18" fill="none" stroke="var(--emerald-600)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                                    <div style="width: 32px; height: 32px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="18" height="18" fill="none" stroke="var(--text-secondary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
                                     </div>
                                     <h3 class="config-card-title">Integraciones</h3>
                                 </div>
@@ -2869,7 +2869,7 @@
                         <div class="config-card">
                             <div class="config-card-header">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 32px; height: 32px; background: var(--emerald-100); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                    <div style="width: 32px; height: 32px; background: var(--bg-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                         <svg width="18" height="18" fill="#25D366" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                                     </div>
                                     <h3 class="config-card-title">Canal WhatsApp</h3>
